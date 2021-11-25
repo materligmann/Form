@@ -300,7 +300,7 @@ public enum FormModels {
     
     // MARK: TableView View Model
     
-    class ViewModel {
+    public class ViewModel {
         var sections: [Section]
         
         init(sections: [Section]) {

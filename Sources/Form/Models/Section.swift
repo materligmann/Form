@@ -9,5 +9,5 @@ import Foundation
 
 public struct Section {
     let title: String?
-    var entries: [Entry]
+    public var entries: [Entry]
 }

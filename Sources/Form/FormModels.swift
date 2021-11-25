@@ -301,7 +301,7 @@ public enum FormModels {
     // MARK: TableView View Model
     
     public class ViewModel {
-        var sections: [Section]
+        public var sections: [Section]
         
         init(sections: [Section]) {
             self.sections = sections
@@ -400,11 +400,11 @@ public enum FormModels {
             }
         }
         
-        func getSectionTitle(for section: Int) -> String? {
+        public func getSectionTitle(for section: Int) -> String? {
             return sections[section].title
         }
         
-        func getRowHeight(tableView: UITableView, indexPath: IndexPath) -> CGFloat {
+        public func getRowHeight(tableView: UITableView, indexPath: IndexPath) -> CGFloat {
             let type = sections[indexPath.section].entries[indexPath.row].entryType
             switch type {
             case .image(let entry):
@@ -427,7 +427,7 @@ public enum FormModels {
             }
         }
         
-        func canDeleteRow(at indexPath: IndexPath, tableView: UITableView) -> Bool {
+        public func canDeleteRow(at indexPath: IndexPath, tableView: UITableView) -> Bool {
             let type = sections[indexPath.section].entries[indexPath.row].entryType
             switch type {
             case .basic(let basicEntry):
@@ -437,7 +437,7 @@ public enum FormModels {
             }
         }
         
-        func onCellSelection(at indexPath: IndexPath, tableView: UITableView) {
+        public func onCellSelection(at indexPath: IndexPath, tableView: UITableView) {
             let type = sections[indexPath.section].entries[indexPath.row].entryType
             switch type {
             case .basic(let basicEntry):
@@ -459,7 +459,7 @@ public enum FormModels {
             }
         }
         
-        func onCellLongSelection(at indexPath: IndexPath, tableView: UITableView) {
+        public func onCellLongSelection(at indexPath: IndexPath, tableView: UITableView) {
             let type = sections[indexPath.section].entries[indexPath.row].entryType
             switch type {
             case .text(_):

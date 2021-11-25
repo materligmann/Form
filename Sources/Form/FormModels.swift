@@ -11,7 +11,7 @@ import MapKit
 import AVFoundation
 
 
-enum FormModels {
+public enum FormModels {
     
     // MARK: Request
     

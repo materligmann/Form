@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ValueCell: UITableViewCell {
+public class ValueCell: UITableViewCell {
     
     private let textField = UITextField()
     private let symbolLabel = UILabel()

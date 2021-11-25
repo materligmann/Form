@@ -162,7 +162,7 @@ public class MapCell: UITableViewCell {
 }
 
 extension MapCell: MKMapViewDelegate {
-    func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+    public func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
         let targetRegion = map.convert(CGRect(origin: CGPoint(x: map.frame.midX, y: map.frame.midY), size: CGSize(width: 30, height: 30)), toRegionFrom: map)
         let oneDegreeInKm: Double = 111139
         let precision = Int(targetRegion.span.latitudeDelta * oneDegreeInKm)

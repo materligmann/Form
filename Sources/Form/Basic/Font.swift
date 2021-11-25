@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIFont {
+public extension UIFont {
     @nonobjc class var titleFont: UIFont {
         return UIFont.systemFont(ofSize: 30, weight: .heavy)
     }

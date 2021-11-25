@@ -93,13 +93,6 @@ public enum FormModels {
         var supressable: Bool = false
     }
     
-    enum BasicImage {
-        case system(String)
-        case image(String)
-        case url(String)
-        case none
-    }
-    
     // MARK: Text
     
     struct TextEntry {

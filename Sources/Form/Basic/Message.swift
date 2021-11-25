@@ -9,7 +9,7 @@ import UIKit
 
 struct Alert {
     let title: String
-    let image: FormModels.BasicImage
+    let image: BasicImage
     let body: String?
     let loading: Bool
     let action: (() -> Void)?

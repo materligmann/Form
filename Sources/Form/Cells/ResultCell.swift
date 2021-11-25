@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ResultCell: UITableViewCell {
+public class ResultCell: UITableViewCell {
     
     private let placeholderLabel = UILabel()
     private let iconImageView = UIImageView()

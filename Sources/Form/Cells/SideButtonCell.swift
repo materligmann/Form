@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SideButtonCell: UITableViewCell {
+public class SideButtonCell: UITableViewCell {
     
     class var cellIdentifier: String {
         return "SideButtonCell"

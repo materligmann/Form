@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DateAndTimeCell: UITableViewCell {
+public class DateAndTimeCell: UITableViewCell {
     
     private let placeholderLabel = UILabel()
     private let valueLabel = UILabel()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TransactionCell: UITableViewCell {
+public class TransactionCell: UITableViewCell {
     
     private let descriptionLabel = UILabel()
     private let pointsLabel = UILabel()

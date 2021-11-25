@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecureInputCell: UITableViewCell {
+public class SecureInputCell: UITableViewCell {
     
     private let textField = UITextField()
     private let rightTextFieldButton = UIButton()

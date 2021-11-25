@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SegmentedCell: UITableViewCell {
+public class SegmentedCell: UITableViewCell {
     
     private let segmentedControl = UISegmentedControl()
     private var onSegmentChange: ((String) -> Void)?

@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class MapCell: UITableViewCell {
+public class MapCell: UITableViewCell {
     
     private let map = MKMapView()
     private let centerButton = UIButton()

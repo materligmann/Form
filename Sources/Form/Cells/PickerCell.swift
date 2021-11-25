@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PickerCell: UITableViewCell {
+public class PickerCell: UITableViewCell {
     
     private let placeholderLabel = UILabel()
     private let valueLabel = UILabel()

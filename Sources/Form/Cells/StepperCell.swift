@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StepperCell: UITableViewCell {
+public class StepperCell: UITableViewCell {
     
     private let stepper = UIStepper()
     private let valueLabel = UILabel()

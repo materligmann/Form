@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TextInputCell: UITableViewCell {
+public class TextInputCell: UITableViewCell {
     
     private let textField = UITextField()
     private var onTextFieldChange: ((String?) -> Void)?

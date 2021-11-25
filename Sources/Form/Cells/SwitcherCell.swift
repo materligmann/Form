@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SwitcherCell: UITableViewCell {
+public class SwitcherCell: UITableViewCell {
     
     private let placeholderLabel = UILabel()
     private let valueLabel = UILabel()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BasicButtonCell: UITableViewCell {
+public class BasicButtonCell: UITableViewCell {
     
     class var cellIdentifier: String {
         return "BasicButtonCell"

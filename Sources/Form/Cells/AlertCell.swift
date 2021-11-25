@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlertCell: UITableViewCell {
+public class AlertCell: UITableViewCell {
     
     private let placeholderLabel = UILabel()
     private let valueLabel = UILabel()

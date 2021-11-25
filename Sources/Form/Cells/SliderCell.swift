@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SliderCell: UITableViewCell {
+public class SliderCell: UITableViewCell {
     
     private let slider = UISlider()
     

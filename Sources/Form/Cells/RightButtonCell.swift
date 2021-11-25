@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RightButtonCell: UITableViewCell {
+public class RightButtonCell: UITableViewCell {
     
     private let placeholderLabel = UILabel()
     private let valueLabel = UILabel()

@@ -10,7 +10,7 @@ import Foundation
 
 import UIKit
 
-class ImageCell: UITableViewCell {
+public class ImageCell: UITableViewCell {
     
     private let iconImageView = UIImageView()
     private let placeholderLabel = UILabel()

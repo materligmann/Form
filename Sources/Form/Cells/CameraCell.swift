@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class CameraCell: UITableViewCell {
+public class CameraCell: UITableViewCell {
     
     private let captureView = UIView()
     private let captureImageView = UIImageView()

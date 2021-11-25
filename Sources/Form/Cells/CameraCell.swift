@@ -17,7 +17,7 @@ public class CameraCell: UITableViewCell {
     
     private var onCode: ((String) -> Void)?
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "CameraCell"
     }
     

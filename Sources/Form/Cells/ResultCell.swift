@@ -12,7 +12,7 @@ public class ResultCell: UITableViewCell {
     private let placeholderLabel = UILabel()
     private let iconImageView = UIImageView()
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "ResultCell"
     }
     

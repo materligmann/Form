@@ -13,7 +13,7 @@ public class ValueCell: UITableViewCell {
     private let symbolLabel = UILabel()
     private var onTextFieldChange: ((String?) -> Void)?
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "ValueCell"
     }
     

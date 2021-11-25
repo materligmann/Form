@@ -17,7 +17,7 @@ public class ImageCell: UITableViewCell {
     
     private var placeholder: String?
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "ImageCell"
     }
     

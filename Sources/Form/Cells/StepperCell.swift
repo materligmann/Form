@@ -14,7 +14,7 @@ public class StepperCell: UITableViewCell {
     
     private var action: ((Double) -> Void)?
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "StepperCell"
     }
     

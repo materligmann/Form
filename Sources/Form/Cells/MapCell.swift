@@ -23,7 +23,7 @@ public class MapCell: UITableViewCell {
     
     private var onChange: ((MKCoordinateRegion) -> Void)?
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "MapCell"
     }
     

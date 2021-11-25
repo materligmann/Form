@@ -14,7 +14,7 @@ public class SegmentedCell: UITableViewCell {
     
     private var segments: [FormModels.Segment]?
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "SegmentedCell"
     }
     

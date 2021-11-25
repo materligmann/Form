@@ -14,7 +14,7 @@ public class SecureInputCell: UITableViewCell {
     
     private var onTextFieldChange: ((String?) -> Void)?
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "SecureInputCell"
     }
     

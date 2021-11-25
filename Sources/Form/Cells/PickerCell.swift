@@ -19,7 +19,7 @@ public class PickerCell: UITableViewCell {
     
     private var onPick: ((String) -> Void)?
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "PickerCell"
     }
     

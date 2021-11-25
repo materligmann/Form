@@ -13,7 +13,7 @@ public class RightButtonCell: UITableViewCell {
     private let valueLabel = UILabel()
     private var action: (() -> Void)?
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "RightButtonCell"
     }
     

@@ -13,7 +13,7 @@ public class StateCell: UITableViewCell {
     private let valueLabel = UILabel()
     private let indicatorView = UIView()
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "StateCell"
     }
     

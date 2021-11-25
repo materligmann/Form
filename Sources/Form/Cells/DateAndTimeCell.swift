@@ -16,7 +16,7 @@ public class DateAndTimeCell: UITableViewCell {
     
     private var onDateChangedAction: ((Date) -> Void)?
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "DateAndTimeCell"
     }
     

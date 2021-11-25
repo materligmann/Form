@@ -12,7 +12,7 @@ public class TextInputCell: UITableViewCell {
     private let textField = UITextField()
     private var onTextFieldChange: ((String?) -> Void)?
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "TextInputCell"
     }
     

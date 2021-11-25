@@ -14,7 +14,7 @@ public class TransactionCell: UITableViewCell {
     private let iconImageView = UIImageView()
     private let dateLabel = UILabel()
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "TransactionCell"
     }
     

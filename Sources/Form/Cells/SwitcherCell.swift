@@ -15,7 +15,7 @@ public class SwitcherCell: UITableViewCell {
     
     private var switcherAction: ((Bool) -> Void)?
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "SwitcherCell"
     }
     

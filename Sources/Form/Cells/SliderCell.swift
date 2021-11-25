@@ -11,7 +11,7 @@ public class SliderCell: UITableViewCell {
     
     private let slider = UISlider()
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "SliderCell"
     }
     

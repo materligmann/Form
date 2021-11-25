@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum BasicImage {
+public enum BasicImage {
     case system(String)
     case image(String)
     case url(String)

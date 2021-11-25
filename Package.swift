@@ -7,7 +7,7 @@ let package = Package(
     name: "Form",
     platforms: [
             .macOS(.v10_14),
-            .iOS(.v10),
+            .iOS(.v13),
             .tvOS(.v13)
         ],
     products: [

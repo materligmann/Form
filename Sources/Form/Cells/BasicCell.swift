@@ -12,7 +12,7 @@ public class BasicCell: UITableViewCell {
     private let placeholderLabel = UILabel()
     private let valueLabel = UILabel()
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "BasicCell"
     }
     

@@ -15,7 +15,7 @@ public class AlertCell: UITableViewCell {
     
     private var rightAction: (() -> Void)?
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "AlertCell"
     }
     

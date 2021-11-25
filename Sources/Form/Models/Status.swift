@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Status: String {
+public enum Status: String {
     case success
     case pending
     case failed

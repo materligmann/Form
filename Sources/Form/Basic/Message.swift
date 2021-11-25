@@ -53,12 +53,12 @@ struct Alert {
                      sticky: sticky)
     }
     
-    mutating func section(rightAction: (() -> Void)?) -> FormModels.Section {
+    mutating func section(rightAction: (() -> Void)?) -> Section {
         if let rightAction = rightAction {
             buttonAction = rightAction
         }
-        return FormModels.Section(title: nil, entries: [
-            FormModels.Entry(entryType: .alert(FormModels.AlertEntry(color: .mainColor,
+        return Section(title: nil, entries: [
+            Entry(entryType: .alert(FormModels.AlertEntry(color: .mainColor,
                                                                      imageColor: .backColor,
                                                                      textColor: .backColor,
                                                                      alert: self)))

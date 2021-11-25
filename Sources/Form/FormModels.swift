@@ -45,40 +45,7 @@ public enum FormModels {
     
     // MARK: Form Structure
     
-    struct Section {
-        let title: String?
-        var entries: [Entry]
-    }
-    
-    struct Entry {
-        let entryType: EntryType
-    }
-    
     // MARK: Entry Management
-    
-    enum EntryType {
-        case basic(BasicEntry)
-        case text(TextEntry)
-        case textInput(TextInputEntry)
-        case secureTextInput(SecureTextInputEntry)
-        case basicButton(BasicButtonEntry)
-        case sideButton(SideButtonEntry)
-        case rightButton(RightButtonEntry)
-        case state(StateEntry)
-        case segment(SegmentEntry)
-        case switcher(SwitcherEntry)
-        case result(ResultEntry)
-        case dateAndTime(DateAndTimeEntry)
-        case picker(PickerEntry)
-        case transaction(TransactionEntry)
-        case image(ImageEntry)
-        case slider(SliderEntry)
-        case stepper(StepperEntry)
-        case value(ValueEntry)
-        case map(MapEntry)
-        case alert(AlertEntry)
-        case camera(CameraEntry)
-    }
     
     // MARK: Basic
     

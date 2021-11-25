@@ -9,7 +9,7 @@ import UIKit
 
 public class BasicButtonCell: UITableViewCell {
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "BasicButtonCell"
     }
     

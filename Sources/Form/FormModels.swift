@@ -276,7 +276,7 @@ public enum FormModels {
         
         // MARK: Interface
         
-        func getCell(at indexPath: IndexPath, for tableView: UITableView) -> UITableViewCell {
+        public func getCell(at indexPath: IndexPath, for tableView: UITableView) -> UITableViewCell {
             let formType = sections[indexPath.section].entries[indexPath.row].entryType
             switch formType {
             case .basic(let basicEntry):

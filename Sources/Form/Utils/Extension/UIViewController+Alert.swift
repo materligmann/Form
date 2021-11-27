@@ -7,19 +7,39 @@
 
 import UIKit
 
-extension UIViewController {
+protocol AlertViewable {
+    var alertView: AlertView? { get set }
+    func configureAlertView(alert: Alert, tableView: UITableView)
+    func displayAlert(alert: Alert, tableView: UITableView?)
+}
+
+extension UIViewController: AlertViewable {
     
-    func displayAlert(alert: Alert, tableView: UITableView?) {
-        if let tableView = tableView {
-            let alertView = AlerView(alert: alert, superView: view, tableView: tableView)
-            alertView.animate(show: true)
+    struct Holder {
+        static var alertView: AlertView?
+    }
+    
+    var alertView: AlertView? {
+        get {
+            return Holder.alertView
+        }
+        set(newValue) {
+            Holder.alertView = newValue
         }
     }
     
-    func hideMessage(in second: Double, constraint: NSLayoutConstraint?) {
-        UIView.animate(withDuration: 0.25, delay: second) {
-            constraint?.constant = 0
-            self.view.layoutIfNeeded()
+    func configureAlertView(alert: Alert, tableView: UITableView) {
+        alertView = AlertView(alert: alert, superView: view, tableView: tableView)
+    }
+    
+    func displayAlert(alert: Alert, tableView: UITableView?) {
+        if let tableView = tableView {
+            if let currentAlertView = alertView, currentAlertView.tableView == tableView {
+                currentAlertView.changeAlert(newAlert: alert)
+            } else {
+                configureAlertView(alert: alert, tableView: tableView)
+                alertView?.animate(show: true, in: 0)
+            }
         }
     }
     

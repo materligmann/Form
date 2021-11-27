@@ -8,13 +8,13 @@
 import UIKit
 
 public struct Alert {
-    let title: String
-    let image: BasicImage
-    let body: String?
-    let loading: Bool
-    let action: (() -> Void)?
-    var buttonAction: (() -> Void)?
-    let sticky: Bool
+    public let title: String
+    public let image: BasicImage
+    public let body: String?
+    public let loading: Bool
+    public let action: (() -> Void)?
+    public var buttonAction: (() -> Void)?
+    public let sticky: Bool
     
     static func basicSuccessModel(body: String?,
                                   sticky: Bool,

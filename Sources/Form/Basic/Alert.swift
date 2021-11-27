@@ -16,37 +16,37 @@ public struct Alert {
     public var buttonAction: (() -> Void)?
     public let sticky: Bool
     
-    public static func basicSuccessModel(body: String?,
-                                  sticky: Bool,
-                                  action: (() -> Void)?,
-                                  onButtonAction: (() -> Void)?) -> Alert {
-        return Alert(title: Status.success.rawValue,
+    public static func basicSuccessModel(title: String?,
+                                         sticky: Bool,
+                                         action: (() -> Void)?,
+                                         onButtonAction: (() -> Void)?) -> Alert {
+        return Alert(title: title ?? Status.success.rawValue,
                      image: .system(Status.success.symbol()),
-                     body: body,
+                     body: nil,
                      loading: false,
                      action: action,
                      buttonAction: onButtonAction,
                      sticky: sticky)
     }
     
-    public static func basicPendingModel(body: String?,
-                                  sticky: Bool,
-                                  action: (() -> Void)?, onButtonAction: (() -> Void)?) -> Alert {
-        return Alert(title: Status.pending.rawValue,
+    public static func basicPendingModel(title: String?,
+                                         sticky: Bool,
+                                         action: (() -> Void)?, onButtonAction: (() -> Void)?) -> Alert {
+        return Alert(title: title ?? Status.pending.rawValue,
                      image: .system(Status.success.symbol()),
-                     body: body,
+                     body: nil,
                      loading: true,
                      action: action,
                      buttonAction: action,
                      sticky: sticky)
     }
     
-    public static func basicErrorModel(body: String?,
-                                sticky: Bool,
-                                action: (() -> Void)?) -> Alert {
-        return Alert(title: Status.failed.rawValue,
+    public static func basicErrorModel(title: String?,
+                                       sticky: Bool,
+                                       action: (() -> Void)?) -> Alert {
+        return Alert(title: title ?? Status.failed.rawValue,
                      image: .system(Status.success.symbol()),
-                     body: body,
+                     body: nil,
                      loading: false,
                      action: action,
                      buttonAction: action,
@@ -59,9 +59,9 @@ public struct Alert {
         }
         return Section(title: nil, entries: [
             Entry(entryType: .alert(FormModels.AlertEntry(color: .mainColor,
-                                                                     imageColor: .backColor,
-                                                                     textColor: .backColor,
-                                                                     alert: self)))
+                                                          imageColor: .backColor,
+                                                          textColor: .backColor,
+                                                          alert: self)))
         ])
     }
 }

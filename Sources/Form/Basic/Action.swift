@@ -7,13 +7,13 @@
 
 import UIKit
 
-struct Action {
+public struct Action {
     let actionTitle: String
     let onCompletion: ((String?) -> Void)?
     let style: ActionStyle
 }
 
-enum ActionStyle {
+public enum ActionStyle {
     case cancel
     case basic
     case destructive

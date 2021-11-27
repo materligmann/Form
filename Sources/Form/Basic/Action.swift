@@ -11,6 +11,13 @@ public struct Action {
     let actionTitle: String
     let onCompletion: ((String?) -> Void)?
     let style: ActionStyle
+    
+    
+    public init(actionTitle: String, onCompletion: ((String?) -> Void)?, style: ActionStyle) {
+        self.actionTitle = actionTitle
+        self.onCompletion = onCompletion
+        self.style = style
+    }
 }
 
 public enum ActionStyle {

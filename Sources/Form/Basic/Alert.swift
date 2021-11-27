@@ -16,6 +16,22 @@ public struct Alert {
     public var buttonAction: (() -> Void)?
     public let sticky: Bool
     
+    public init(title: String,
+                image: BasicImage,
+                body: String?,
+                loading: Bool,
+                action: (() -> Void)?,
+                buttonAction: (() -> Void)?,
+                sticky: Bool) {
+        self.title = title
+        self.image = image
+        self.body = body
+        self.loading = loading
+        self.action = action
+        self.buttonAction = buttonAction
+        self.sticky = sticky
+    }
+    
     public static func basicSuccessModel(title: String?,
                                          sticky: Bool,
                                          action: (() -> Void)?,

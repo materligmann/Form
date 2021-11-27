@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Alert {
+public struct Alert {
     let title: String
     let image: BasicImage
     let body: String?
@@ -66,7 +66,7 @@ struct Alert {
     }
 }
 
-struct Message {
+public struct Message {
     let title: String
     let body: String
     let textField: Bool

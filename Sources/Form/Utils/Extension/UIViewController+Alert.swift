@@ -19,7 +19,7 @@ extension UIViewController: AlertViewable {
         static var alertView: AlertView?
     }
     
-    var alertView: AlertView? {
+    public var alertView: AlertView? {
         get {
             return Holder.alertView
         }
@@ -28,11 +28,11 @@ extension UIViewController: AlertViewable {
         }
     }
     
-    func configureAlertView(alert: Alert, tableView: UITableView) {
+    public func configureAlertView(alert: Alert, tableView: UITableView) {
         alertView = AlertView(alert: alert, superView: view, tableView: tableView)
     }
     
-    func displayAlert(alert: Alert, tableView: UITableView?) {
+    public func displayAlert(alert: Alert, tableView: UITableView?) {
         if let tableView = tableView {
             if let currentAlertView = alertView, currentAlertView.tableView == tableView {
                 currentAlertView.changeAlert(newAlert: alert)
@@ -43,7 +43,7 @@ extension UIViewController: AlertViewable {
         }
     }
     
-    func displayAlertSection(alert: Alert,
+    public func displayAlertSection(alert: Alert,
                       viewModel: FormModels.ViewModel?,
                       tableView: UITableView?) {
         var alert = alert
@@ -64,14 +64,14 @@ extension UIViewController: AlertViewable {
         showMessageSection(tableView: tableView, onEnd: alert.sticky ? nil : stickyHideAction)
     }
     
-    func showMessageSection(tableView: UITableView?, onEnd: (() -> Void)?) {
+    public func showMessageSection(tableView: UITableView?, onEnd: (() -> Void)?) {
         tableView?.beginUpdates()
         tableView?.insertSections(IndexSet(integer: 0), with: .fade)
         tableView?.endUpdates()
         onEnd?()
     }
     
-    func hideMessageSection(in delay: Double,
+    public func hideMessageSection(in delay: Double,
                      viewModel: FormModels.ViewModel?,
                      tableView: UITableView?) {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
@@ -82,7 +82,7 @@ extension UIViewController: AlertViewable {
         }
     }
     
-    func displayMessage(message: Message) {
+    public func displayMessage(message: Message) {
         let alert = UIAlertController(title: message.title,
                                       message: message.body,
                                       preferredStyle: .alert)

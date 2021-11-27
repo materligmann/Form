@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlertView: UIView {
+public class AlertView: UIView {
     
     private var alert: Alert
     

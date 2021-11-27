@@ -16,7 +16,7 @@ public struct Alert {
     public var buttonAction: (() -> Void)?
     public let sticky: Bool
     
-    static func basicSuccessModel(body: String?,
+    public static func basicSuccessModel(body: String?,
                                   sticky: Bool,
                                   action: (() -> Void)?,
                                   onButtonAction: (() -> Void)?) -> Alert {
@@ -29,7 +29,7 @@ public struct Alert {
                      sticky: sticky)
     }
     
-    static func basicPendingModel(body: String?,
+    public static func basicPendingModel(body: String?,
                                   sticky: Bool,
                                   action: (() -> Void)?, onButtonAction: (() -> Void)?) -> Alert {
         return Alert(title: Status.pending.rawValue,
@@ -41,7 +41,7 @@ public struct Alert {
                      sticky: sticky)
     }
     
-    static func basicErrorModel(body: String?,
+    public static func basicErrorModel(body: String?,
                                 sticky: Bool,
                                 action: (() -> Void)?) -> Alert {
         return Alert(title: Status.failed.rawValue,

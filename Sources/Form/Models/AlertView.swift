@@ -23,7 +23,7 @@ public class AlertView: UIView {
     private var topConstraint: NSLayoutConstraint?
     private var heightConstraint: NSLayoutConstraint?
     
-    init(alert: Alert, superView: UIView, tableView: UITableView) {
+    public init(alert: Alert, superView: UIView, tableView: UITableView) {
         self.alert = alert
         self.tableView = tableView
         self.superView = superView

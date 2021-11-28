@@ -22,7 +22,7 @@ open class FormViewController: UIViewController {
     
     // MARK: Lifecycle
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         configureBackground()

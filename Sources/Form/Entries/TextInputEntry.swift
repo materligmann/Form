@@ -14,4 +14,15 @@ public struct TextInputEntry {
     let placeholder: String
     let onChange: (String?) -> Void
     var keyboardType: UIKeyboardType? = .alphabet
+    
+    
+    public init(defaultText: String?,
+                placeholder: String,
+                onChange: @escaping (String?) -> Void,
+                keyboardType: UIKeyboardType? = .alphabet) {
+        self.defaultText = defaultText
+        self.placeholder = placeholder
+        self.onChange = onChange
+        self.keyboardType = keyboardType
+    }
 }

@@ -14,9 +14,17 @@ public struct MapEntry {
     let onChange: ((MKCoordinateRegion) -> Void)?
     let mode: MapEntryMode
     let region: MKCoordinateRegion?
+    
+    public init(onChange: ((MKCoordinateRegion) -> Void)?,
+                mode: MapEntryMode,
+                region: MKCoordinateRegion?) {
+        self.onChange = onChange
+        self.mode = mode
+        self.region = region
+    }
 }
 
-enum MapEntryMode {
+public enum MapEntryMode {
     case set(UIColor, Bool)
     case get
 }

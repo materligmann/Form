@@ -11,4 +11,8 @@ import Foundation
 
 public struct DateAndTimeEntry {
     let onDateChangedAction: (Date) -> Void
+    
+    public init(onDateChangedAction: @escaping (Date) -> Void) {
+        self.onDateChangedAction = onDateChangedAction
+    }
 }

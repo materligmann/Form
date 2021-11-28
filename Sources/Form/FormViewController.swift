@@ -45,9 +45,16 @@ public class FormViewController: UIViewController {
     // MARK: Configure
     
     private func configureBackground() {
-        view.backgroundColor = .systemRed
+        view.backgroundColor = .backColor
     }
-    
+        
+        
+    private func configureTitle() {
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font:
+                                                                    UIFont.systemFont(ofSize: 20, weight: .bold)]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.mainColor]
+    }
+        
     private func configureActionButton() {
         actionButton.target = self
         actionButton.action = #selector(saveButtonWasPressed)

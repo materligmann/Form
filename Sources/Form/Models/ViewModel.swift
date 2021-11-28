@@ -10,7 +10,7 @@ import UIKit
 public class ViewModel {
     public var sections: [Section]
     
-    init(sections: [Section]) {
+    public init(sections: [Section]) {
         self.sections = sections
     }
     

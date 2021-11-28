@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum EntryType {
+public enum EntryType {
     case basic(FormModels.BasicEntry)
     case text(FormModels.TextEntry)
     case textInput(FormModels.TextInputEntry)

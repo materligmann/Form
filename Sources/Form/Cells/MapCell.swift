@@ -16,6 +16,8 @@ public class MapCell: UITableViewCell {
     private let placeholderLabel = UILabel()
     private let targetImageView = UIImageView()
     private let slider = UISlider()
+    private let minSpan = 0.1
+    private let maxSpan = 1
     
     private var originRegion: MKCoordinateRegion?
     
@@ -75,6 +77,9 @@ public class MapCell: UITableViewCell {
     }
     
     private func configureSlider() {
+        slider.minimumValue = 0
+        slider.maximumValue = 10
+        slider.value = 0
         slider.addTarget(self, action: #selector(onSliderChange), for: .valueChanged)
         slider.tintColor = .mainColor
         slider.translatesAutoresizingMaskIntoConstraints = false
@@ -157,7 +162,10 @@ public class MapCell: UITableViewCell {
     }
     
     @objc private func onSliderChange() {
-        
+        map.setRegion(MKCoordinateRegion(center: map.centerCoordinate,
+                                         span: MKCoordinateSpan(latitudeDelta: Double(slider.value),
+                                                                longitudeDelta: Double(slider.value))),
+                      animated: true)
     }
 }
 

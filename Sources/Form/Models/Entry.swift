@@ -9,4 +9,8 @@ import Foundation
 
 public struct Entry {
     let entryType: EntryType
+    
+    public init(entryType: EntryType) {
+        self.entryType = entryType
+    }
 }

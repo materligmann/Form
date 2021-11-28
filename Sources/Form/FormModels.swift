@@ -49,7 +49,7 @@ public enum FormModels {
     
     // MARK: Basic
     
-    struct BasicEntry {
+    public struct BasicEntry {
         let title: String
         let imageName: BasicImage
         let action: (() -> Void)?
@@ -62,7 +62,7 @@ public enum FormModels {
     
     // MARK: Text
     
-    struct TextEntry {
+    public struct TextEntry {
         let placeholder: String?
         let value: String?
         var action: (()-> Void)?
@@ -71,7 +71,7 @@ public enum FormModels {
     
     // MARK: TextInput
     
-    struct TextInputEntry {
+    public struct TextInputEntry {
         let defaultText: String? 
         let placeholder: String
         let onChange: (String?) -> Void
@@ -80,7 +80,7 @@ public enum FormModels {
     
     // MARK: SecureTextInput
     
-    struct SecureTextInputEntry {
+    public struct SecureTextInputEntry {
         let defaultText: String?
         let placeholder: String
         let onChange: (String?) -> Void
@@ -88,7 +88,7 @@ public enum FormModels {
     
     // MARK: RightButton
     
-    struct RightButtonEntry {
+    public struct RightButtonEntry {
         let iconImage: String
         let title: String
         let onPress: (() -> Void)?
@@ -96,7 +96,7 @@ public enum FormModels {
     
     // MARK: BasicButtonEntry
     
-    struct BasicButtonEntry {
+    public struct BasicButtonEntry {
         let loading: Bool
         let title: String?
         let color: UIColor
@@ -108,7 +108,7 @@ public enum FormModels {
     
     // MARK: SideButtonEntry
     
-    struct SideButtonEntry {
+    public struct SideButtonEntry {
         let mode: SideButtonEntryMode
     }
     
@@ -117,7 +117,7 @@ public enum FormModels {
         case disabled(SideButtonEntryModeRequirement)
     }
     
-    struct SideButtonEntryModeRequirement {
+    public struct SideButtonEntryModeRequirement {
         let description: String
         let buttonTitle: String
         let buttonAction: (() -> Void)?
@@ -125,7 +125,7 @@ public enum FormModels {
     
     // MARK: StateEntry
     
-    struct StateEntry {
+    public struct StateEntry {
         let placeholder: String
         let value: String
         let indicatorColor: UIColor
@@ -133,7 +133,7 @@ public enum FormModels {
     
     // MARK: Segment
     
-    struct SegmentEntry {
+    public struct SegmentEntry {
         let segments: [Segment]
         let onSegmentChange: (String) -> Void
         let isEnabled: Bool
@@ -146,7 +146,7 @@ public enum FormModels {
     
     // MARK: Switcher
     
-    struct SwitcherEntry {
+    public struct SwitcherEntry {
         let title: String
         let backgroundColor: UIColor
         let imageColor: UIColor
@@ -157,7 +157,7 @@ public enum FormModels {
     
     // MARK: Result
     
-    struct ResultEntry {
+    public struct ResultEntry {
         let placeholder: String
         let image: BasicImage
         let disclosure: Bool
@@ -167,13 +167,13 @@ public enum FormModels {
     
     // MARK: DateAndTimeEntry
     
-    struct DateAndTimeEntry {
+    public struct DateAndTimeEntry {
         let onDateChangedAction: (Date) -> Void
     }
     
     // MARK: PickerEntry
     
-    struct PickerEntry {
+    public struct PickerEntry {
         let components: [Component]
         let onPick: (String) -> Void
     }
@@ -190,14 +190,14 @@ public enum FormModels {
     
     // MARK: Transaction
     
-    struct TransactionEntry {
+    public struct TransactionEntry {
         var action: (()-> Void)?
         var disclosure: Bool = false
     }
     
     // MARK: Image
 
-    struct ImageEntry {
+    public struct ImageEntry {
         let image: UIImage?
         let url: URL?
         let height: Int
@@ -206,7 +206,7 @@ public enum FormModels {
     
     // MARK: Slider
 
-    struct SliderEntry {
+    public struct SliderEntry {
         let onSliderChange: (Float, Bool, Bool) -> Void
         let initialValue: Float
         let minimum: Float
@@ -215,7 +215,7 @@ public enum FormModels {
     
     // MARK: Stepper
     
-    struct StepperEntry {
+    public struct StepperEntry {
         let minimum: Double
         let maximum: Double
         let number: Double
@@ -226,7 +226,7 @@ public enum FormModels {
     
     // MARK: Value
     
-    struct ValueEntry {
+    public struct ValueEntry {
         let symbol: String
         let defaultText: String?
         let placeholder: String?
@@ -238,7 +238,7 @@ public enum FormModels {
     
     // MARK: Map
     
-    struct MapEntry {
+    public struct MapEntry {
         let onChange: ((MKCoordinateRegion) -> Void)?
         let mode: MapEntryMode
         let region: MKCoordinateRegion?
@@ -251,14 +251,14 @@ public enum FormModels {
     
     // MARK: Camera
     
-    struct CameraEntry {
+    public struct CameraEntry {
         let onCode: ((String) -> Void)
         let scan: AVMetadataObject.ObjectType
     }
     
     // MARK: Alert
     
-    struct AlertEntry {
+    public struct AlertEntry {
         let color: UIColor
         let imageColor: UIColor
         let textColor: UIColor

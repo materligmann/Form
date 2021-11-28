@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class FormViewController: UIViewController {
+open class FormViewController: UIViewController {
     
     private let formTableView = UITableView(frame: .zero, style: .insetGrouped)
     private let closeButton = UIBarButtonItem()

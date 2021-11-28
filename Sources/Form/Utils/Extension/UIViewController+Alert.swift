@@ -44,7 +44,7 @@ extension UIViewController: AlertViewable {
     }
     
     public func displayAlertSection(alert: Alert,
-                      viewModel: FormModels.ViewModel?,
+                      viewModel: ViewModel?,
                       tableView: UITableView?) {
         var alert = alert
         let stickyHideAction = {
@@ -72,7 +72,7 @@ extension UIViewController: AlertViewable {
     }
     
     public func hideMessageSection(in delay: Double,
-                     viewModel: FormModels.ViewModel?,
+                     viewModel: ViewModel?,
                      tableView: UITableView?) {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             viewModel?.sections.remove(at: 0)

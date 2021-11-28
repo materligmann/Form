@@ -12,7 +12,7 @@ class FormPresenter {
     
     func presentForm(request: FormModels.Request) {
         viewController?.displayTitle(title: request.formTitleLocalizedString)
-        let viewModel = FormModels.ViewModel(sections: request.sections)
+        let viewModel = ViewModel(sections: request.sections)
         viewController?.displayForm(viewModel: viewModel)
         presentFormAction(action: request.formAction)
         presentCloseButton(presentation: request.presentation)

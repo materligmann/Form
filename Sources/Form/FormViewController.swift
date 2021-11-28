@@ -15,7 +15,7 @@ class FormViewController: UIViewController {
     
     var request: FormModels.Request?
     
-    private var formViewModel: FormModels.ViewModel?
+    private var formViewModel: ViewModel?
     
     var interactor: FormInteractor?
     var router: FormRouter?
@@ -113,7 +113,7 @@ class FormViewController: UIViewController {
         actionButton.isEnabled = enabled
     }
     
-    func displayForm(viewModel: FormModels.ViewModel) {
+    func displayForm(viewModel: ViewModel) {
         self.formViewModel = viewModel
         formTableView.reloadData()
     }

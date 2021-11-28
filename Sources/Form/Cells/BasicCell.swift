@@ -32,7 +32,7 @@ public class BasicCell: UITableViewCell {
         accessoryType = accessory
     }
     
-    func set(entry: FormModels.BasicEntry) {
+    func set(entry: BasicEntry) {
         textLabel?.textColor = entry.textColor
         backgroundColor = entry.color
         tintColor = entry.textColor

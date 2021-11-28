@@ -49,17 +49,6 @@ public enum FormModels {
     
     // MARK: Basic
     
-    public struct BasicEntry {
-        let title: String
-        let imageName: BasicImage
-        let action: (() -> Void)?
-        let accesory: UITableViewCell.AccessoryType
-        let color: UIColor
-        let imageColor: UIColor
-        let textColor: UIColor
-        var supressable: Bool = false
-    }
-    
     // MARK: Text
     
     public struct TextEntry {

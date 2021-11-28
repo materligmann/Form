@@ -165,7 +165,7 @@ public class MapCell: UITableViewCell {
         map.setRegion(MKCoordinateRegion(center: map.centerCoordinate,
                                          span: MKCoordinateSpan(latitudeDelta: Double(slider.value),
                                                                 longitudeDelta: Double(slider.value))),
-                      animated: true)
+                      animated: false)
     }
 }
 

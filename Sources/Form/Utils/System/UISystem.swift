@@ -11,7 +11,7 @@ struct UISystem {
     static func getNavigation(rootViewController: UIViewController) -> UINavigationController {
         let navigation = UINavigationController()
         navigation.viewControllers = [rootViewController]
-        navigation.navigationBar.prefersLargeTitles = true
+        navigation.navigationBar.prefersLargeTitles = false
         navigation.navigationBar.barTintColor = .backColor
         navigation.navigationBar.tintColor = .mainColor
         return navigation

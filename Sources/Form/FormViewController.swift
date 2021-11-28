@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FormViewController: UIViewController {
+public class FormViewController: UIViewController {
     
     private let formTableView = UITableView(frame: .zero, style: .insetGrouped)
     private let closeButton = UIBarButtonItem()
@@ -22,7 +22,7 @@ class FormViewController: UIViewController {
     
     // MARK: Lifecycle
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         configureBackground()
@@ -120,23 +120,23 @@ class FormViewController: UIViewController {
 }
 
 extension FormViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return formViewModel?.sections.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return formViewModel?.getSectionTitle(for: section)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return formViewModel?.sections[section].entries.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return formViewModel?.getCell(at: indexPath, for: tableView) ?? UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         formViewModel?.onCellSelection(at: indexPath, tableView: tableView)
     }

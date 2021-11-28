@@ -69,15 +69,6 @@ public enum FormModels {
         var disclosure: Bool = false
     }
     
-    // MARK: TextInput
-    
-    public struct TextInputEntry {
-        let defaultText: String? 
-        let placeholder: String
-        let onChange: (String?) -> Void
-        var keyboardType: UIKeyboardType? = .alphabet
-    }
-    
     // MARK: SecureTextInput
     
     public struct SecureTextInputEntry {
@@ -92,18 +83,6 @@ public enum FormModels {
         let iconImage: String
         let title: String
         let onPress: (() -> Void)?
-    }
-    
-    // MARK: BasicButtonEntry
-    
-    public struct BasicButtonEntry {
-        let loading: Bool
-        let title: String?
-        let color: UIColor
-        let tintColor: UIColor
-        let onPress: (() -> Void)?
-        let font: UIFont?
-        let imageName: String?
     }
     
     // MARK: SideButtonEntry
@@ -163,12 +142,6 @@ public enum FormModels {
         let disclosure: Bool
         let selected: Bool
         let action: (() -> Void)?
-    }
-    
-    // MARK: DateAndTimeEntry
-    
-    public struct DateAndTimeEntry {
-        let onDateChangedAction: (Date) -> Void
     }
     
     // MARK: PickerEntry
@@ -234,19 +207,6 @@ public enum FormModels {
         let editable: Bool
         let onChange: ((String?) -> Void)?
         var keyboardType: UIKeyboardType? = .decimalPad
-    }
-    
-    // MARK: Map
-    
-    public struct MapEntry {
-        let onChange: ((MKCoordinateRegion) -> Void)?
-        let mode: MapEntryMode
-        let region: MKCoordinateRegion?
-    }
-    
-    enum MapEntryMode {
-        case set(UIColor, Bool)
-        case get
     }
     
     // MARK: Camera

@@ -33,7 +33,7 @@ public class BasicButtonCell: UITableViewCell {
     
     // MARK: Set
     
-    func set(entry: FormModels.BasicButtonEntry) {
+    func set(entry: BasicButtonEntry) {
         backgroundColor = .clear
         button.tintColor = entry.tintColor
         button.imageView?.tintColor = entry.tintColor

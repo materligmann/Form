@@ -47,7 +47,7 @@ public class MapCell: UITableViewCell {
     
     // MARK: Set
     
-    func set(entry: FormModels.MapEntry) {
+    func set(entry: MapEntry) {
         self.onChange = entry.onChange
         switch entry.mode {
         case .set(let targetColor, let zoom):

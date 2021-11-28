@@ -63,7 +63,7 @@ public class FormViewController: UIViewController {
     }
     
     private func configureTableView() {
-        formTableView.backgroundColor = .systemFill
+        formTableView.backgroundColor = .backColor
         formTableView.delegate = self
         formTableView.dataSource = self
         formTableView.rowHeight = 50
@@ -80,7 +80,7 @@ public class FormViewController: UIViewController {
         view.addSubview(formTableView)
         formTableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         formTableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
-        formTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        formTableView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 0).isActive = true
         formTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
     

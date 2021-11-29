@@ -69,7 +69,7 @@ open class FormViewController: UIViewController {
     }
     
     private func configureTableView() {
-        formTableView.backgroundColor = .backColor
+        formTableView.backgroundColor = .systemFill
         formTableView.delegate = self
         formTableView.dataSource = self
         formTableView.rowHeight = 50

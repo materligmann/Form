@@ -26,6 +26,8 @@ open class FormViewController: UIViewController {
         super.viewDidLoad()
         setup()
         configureBackground()
+        configureTitle()
+        configureNavigation()
         configureActionButton()
         configureTableView()
         
@@ -53,6 +55,10 @@ open class FormViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font:
                                                                     UIFont.systemFont(ofSize: 20, weight: .bold)]
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.mainColor]
+    }
+    
+    private func configureNavigation() {
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
         
     private func configureActionButton() {

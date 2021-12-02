@@ -215,7 +215,7 @@ public class ViewModel {
     
     private func getTextEntryCell(indexPath: IndexPath,
                                   tableView: UITableView,
-                                  entry: FormModels.TextEntry) -> UITableViewCell {
+                                  entry: TextEntry) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: TextCell.cellIdentifier, for: indexPath) as? TextCell {
             cell.set(entry: entry)

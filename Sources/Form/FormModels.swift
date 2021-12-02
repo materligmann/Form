@@ -51,13 +51,6 @@ public enum FormModels {
     
     // MARK: Text
     
-    public struct TextEntry {
-        let placeholder: String?
-        let value: String?
-        var action: (()-> Void)?
-        var disclosure: Bool = false
-    }
-    
     // MARK: SecureTextInput
     
     public struct SecureTextInputEntry {

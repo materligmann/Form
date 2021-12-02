@@ -9,7 +9,7 @@ import Foundation
 
 public enum EntryType {
     case basic(BasicEntry)
-    case text(FormModels.TextEntry)
+    case text(TextEntry)
     case textInput(TextInputEntry)
     case secureTextInput(FormModels.SecureTextInputEntry)
     case basicButton(BasicButtonEntry)

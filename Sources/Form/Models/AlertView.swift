@@ -55,7 +55,7 @@ public class AlertView: UIView {
     private func configureAlertView(superView: UIView,
                                     tableView: UITableView) {
         backgroundColor = .backColor
-        layer.cornerRadius = 0
+        layer.cornerRadius = 3
         layer.borderColor = UIColor.mainColor.cgColor
         layer.borderWidth = 1
         translatesAutoresizingMaskIntoConstraints = false
@@ -64,8 +64,8 @@ public class AlertView: UIView {
         topConstraint?.isActive = true
         heightConstraint =  heightAnchor.constraint(equalToConstant: 0)
         heightConstraint?.isActive = true
-        leftAnchor.constraint(equalTo: superView.leftAnchor, constant: 0).isActive = true
-        rightAnchor.constraint(equalTo: superView.rightAnchor, constant: -0).isActive = true
+        leftAnchor.constraint(equalTo: superView.leftAnchor, constant: 8).isActive = true
+        rightAnchor.constraint(equalTo: superView.rightAnchor, constant: -8).isActive = true
     }
     
     private func configureRightButton() {

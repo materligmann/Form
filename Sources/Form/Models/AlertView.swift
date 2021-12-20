@@ -56,8 +56,8 @@ public class AlertView: UIView {
                                     tableView: UITableView) {
         backgroundColor = .backColor
         layer.cornerRadius = 0
-        layer.borderColor = UIColor.black.cgColor
-        layer.borderWidth = 0
+        layer.borderColor = UIColor.mainColor.cgColor
+        layer.borderWidth = 1
         translatesAutoresizingMaskIntoConstraints = false
         superView.addSubview(self)
         topConstraint = topAnchor.constraint(equalTo: tableView.topAnchor, constant: 0)

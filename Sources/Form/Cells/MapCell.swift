@@ -201,4 +201,11 @@ extension MapCell: MKMapViewDelegate {
         precisionLabel.text = "\(precision) m"
         onChange?(mapView.region)
     }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            // Set the color for the line
+            renderer.strokeColor = .red
+            return renderer
+        }
 }

@@ -71,6 +71,27 @@ public class MapCell: UITableViewCell {
         let annotation = MKPointAnnotation()
         annotation.coordinate = entry.region!.center
         map.addAnnotation(annotation)
+        
+        let request = MKDirections.Request()
+        // Source
+        let sourcePlaceMark = MKPlacemark.init(coordinate: map.userLocation.coordinate)
+        request.source = MKMapItem(placemark: sourcePlaceMark)
+        // Destination
+        let destPlaceMark = MKPlacemark(coordinate: annotation.coordinate)
+        request.destination = MKMapItem(placemark: destPlaceMark)
+        // Transport Types
+        request.transportType = [.automobile, .walking]
+        
+        let directions = MKDirections(request: request)
+        directions.calculate { response, error in
+            guard let response = response else {
+                print("Error: \(error?.localizedDescription ?? "No error specified").")
+                return
+            }
+            
+            let route = response.routes[0]
+            self.map.addOverlay(route.polyline)
+        }
     }
     
     // MARK: Configure

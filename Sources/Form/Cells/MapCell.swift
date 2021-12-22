@@ -68,6 +68,9 @@ public class MapCell: UITableViewCell {
             map.setRegion(originRegion, animated: false)
         }
         self.onChange?(map.region)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = entry.region!.center
+        map.addAnnotation(annotation)
     }
     
     // MARK: Configure

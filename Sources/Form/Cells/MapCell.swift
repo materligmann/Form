@@ -37,7 +37,6 @@ public class MapCell: UITableViewCell {
         configureMap()
         configureCenterButton()
         configurePrecisionLabel()
-        configureTargetImageView()
         configurePlaceholderLabel()
     }
     
@@ -51,6 +50,7 @@ public class MapCell: UITableViewCell {
         self.onChange = entry.onChange
         switch entry.mode {
         case .set(let targetColor, let zoom):
+            configureTargetImageView()
             map.isUserInteractionEnabled = true
             targetImageView.tintColor = targetColor
             if zoom {

@@ -69,7 +69,7 @@ public class MapCell: UITableViewCell {
         }
         self.onChange?(map.region)
         let annotation = MKPointAnnotation()
-        annotation.coordinate = entry.region!.center
+        annotation.coordinate = entry.region.center
         map.addAnnotation(annotation)
         
         let request = MKDirections.Request()

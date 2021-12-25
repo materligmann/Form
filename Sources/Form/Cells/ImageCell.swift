@@ -36,7 +36,7 @@ public class ImageCell: UITableViewCell {
     
     // MARK: Set
     
-    func set(entry: FormModels.ImageEntry) {
+    func set(entry: ImageEntry) {
         if let image = entry.image {
             iconImageView.image = image
         } else if let url = entry.url {

@@ -336,7 +336,7 @@ public class ViewModel {
     
     private func getImageCell(indexPath: IndexPath,
                               tableView: UITableView,
-                              entry: FormModels.ImageEntry) -> UITableViewCell {
+                              entry: ImageEntry) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: ImageCell.cellIdentifier, for: indexPath) as? ImageCell {
             cell.set(entry: entry)

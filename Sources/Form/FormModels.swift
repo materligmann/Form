@@ -151,13 +151,6 @@ public enum FormModels {
     }
     
     // MARK: Image
-
-    public struct ImageEntry {
-        let image: UIImage?
-        let url: URL?
-        let height: Int
-        let placeholder: String?
-    }
     
     // MARK: Slider
 

@@ -11,4 +11,9 @@ import AVFoundation
 public struct CameraEntry {
     let onCode: ((String) -> Void)
     let scan: AVMetadataObject.ObjectType
+    
+    public init(onCode: @escaping ((String) -> Void), scan: AVMetadataObject.ObjectType) {
+        self.onCode = onCode
+        self.scan = scan
+    }
 }

@@ -7,8 +7,8 @@
 
 import UIKit
 
-struct UISystem {
-    static func getNavigation(rootViewController: UIViewController) -> UINavigationController {
+public struct UISystem {
+    static public func getNavigation(rootViewController: UIViewController) -> UINavigationController {
         let navigation = UINavigationController()
         navigation.viewControllers = [rootViewController]
         navigation.navigationBar.prefersLargeTitles = false

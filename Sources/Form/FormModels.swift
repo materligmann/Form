@@ -193,11 +193,6 @@ public enum FormModels {
     
     // MARK: Camera
     
-    public struct CameraEntry {
-        let onCode: ((String) -> Void)
-        let scan: AVMetadataObject.ObjectType
-    }
-    
     // MARK: Alert
     
     public struct AlertEntry {

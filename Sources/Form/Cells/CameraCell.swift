@@ -40,7 +40,7 @@ public class CameraCell: UITableViewCell {
     
     // MARK: Set
     
-    func set(entry: FormModels.CameraEntry) {
+    func set(entry: CameraEntry) {
         configureCaptureView()
         configureCaptureImageView()
         configureScan(scan: entry.scan)

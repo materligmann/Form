@@ -402,7 +402,7 @@ public class ViewModel {
     
     private func getCameraCell(indexPath: IndexPath,
                                tableView: UITableView,
-                               entry: FormModels.CameraEntry) -> UITableViewCell {
+                               entry: CameraEntry) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: CameraCell.cellIdentifier, for: indexPath) as? CameraCell {
             cell.set(entry: entry)

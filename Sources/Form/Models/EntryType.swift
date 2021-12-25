@@ -28,5 +28,5 @@ public enum EntryType {
     case value(FormModels.ValueEntry)
     case map(MapEntry)
     case alert(FormModels.AlertEntry)
-    case camera(FormModels.CameraEntry)
+    case camera(CameraEntry)
 }

@@ -347,7 +347,7 @@ public class ViewModel {
     
     private func getSliderCell(indexPath: IndexPath,
                                 tableView: UITableView,
-                               entry: FormModels.SliderEntry) -> UITableViewCell {
+                               entry: SliderEntry) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: SliderCell.cellIdentifier, for: indexPath) as? SliderCell {
             cell.set(entry: entry)

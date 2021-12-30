@@ -153,13 +153,6 @@ public enum FormModels {
     // MARK: Image
     
     // MARK: Slider
-
-    public struct SliderEntry {
-        let onSliderChange: (Float, Bool, Bool) -> Void
-        let initialValue: Float
-        let minimum: Float
-        let maximum: Float
-    }
     
     // MARK: Stepper
     

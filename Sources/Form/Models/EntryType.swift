@@ -23,7 +23,7 @@ public enum EntryType {
     case picker(FormModels.PickerEntry)
     case transaction(FormModels.TransactionEntry)
     case image(ImageEntry)
-    case slider(FormModels.SliderEntry)
+    case slider(SliderEntry)
     case stepper(FormModels.StepperEntry)
     case value(FormModels.ValueEntry)
     case map(MapEntry)

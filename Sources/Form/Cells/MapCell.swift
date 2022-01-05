@@ -64,8 +64,7 @@ public class MapCell: UITableViewCell {
             let dest = entry.region.center
             let distance = userLocation.location?.distance(from: CLLocation(latitude: dest.latitude, longitude: dest.longitude))
             if let distance = distance {
-                let span = MKCoordinateSpan(latitudeDelta: Double(distance) / 111111, longitudeDelta: Double(distance) / 111111)
-                let region = MKCoordinateRegion(center: userLocation.coordinate, span: span)
+                self.originRegion = MKCoordinateRegion.init(center: userLocation.coordinate, latitudinalMeters: Double(distance), longitudinalMeters: Double(distance))
                 map.isUserInteractionEnabled = false
                 map.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
                 let annotation = MKPointAnnotation()

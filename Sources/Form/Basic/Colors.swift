@@ -13,7 +13,7 @@ public extension UIColor {
     }
     
     @nonobjc class var backColor: UIColor {
-        return #colorLiteral(red: 0.1817978919, green: 0.2004360557, blue: 0.4549409747, alpha: 1)
+        return #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
     }
     
     @nonobjc class var backLightColor: UIColor {

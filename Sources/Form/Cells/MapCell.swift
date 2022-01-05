@@ -64,8 +64,20 @@ public class MapCell: UITableViewCell {
             let userLocation = map.userLocation
             let dest = entry.region.center
             let distance = userLocation.location?.distance(from: CLLocation(latitude: dest.latitude, longitude: dest.longitude))
+            
             if let distance = distance {
-                self.originRegion = MKCoordinateRegion(center: userLocation.coordinate,
+                let lon1 = userLocation.coordinate.longitude * Double.pi / 180
+                let lon2 = dest.longitude * Double.pi / 180
+                let lat1 = userLocation.coordinate.latitude * Double.pi / 180
+                let lat2 = dest.latitude * Double.pi / 180
+                let dLon = lon2 - lon1
+                let x = cos(lat2) * cos(dLon)
+                let y = cos(lat2) * sin(dLon)
+                
+                let lat3 = atan2( sin(lat1) + sin(lat2), sqrt((cos(lat1) + x) * (cos(lat1) + x) + y * y) )
+                        let lon3 = lon1 + atan2(y, cos(lat1) + x)
+                
+                self.originRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: lat3, longitude: lon3),
                                                        latitudinalMeters: distance + distance * 0.2,
                                                        longitudinalMeters: distance + distance * 0.2)
                 map.isUserInteractionEnabled = false

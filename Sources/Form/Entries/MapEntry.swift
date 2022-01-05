@@ -28,6 +28,6 @@ public struct MapEntry {
 }
 
 public enum MapEntryMode {
-    case set(UIColor, Bool)
+    case set(Bool)
     case get
 }

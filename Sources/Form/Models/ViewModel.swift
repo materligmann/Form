@@ -120,7 +120,7 @@ public class ViewModel {
             switch entry.mode {
             case .get:
                 return CGFloat(200)
-            case .set(_, let zoom):
+            case .set(let zoom):
                 if zoom {
                     return CGFloat(250)
                 } else {

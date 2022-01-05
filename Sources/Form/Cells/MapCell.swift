@@ -50,6 +50,7 @@ public class MapCell: UITableViewCell {
         self.onChange = entry.onChange
         switch entry.mode {
         case .set(let zoom):
+            self.originRegion = entry.region
             configureTargetImageView()
             map.isUserInteractionEnabled = true
             targetImageView.tintColor = .backColor
@@ -95,7 +96,6 @@ public class MapCell: UITableViewCell {
                 }
             }
         }
-        self.originRegion = entry.region
         if let originRegion = originRegion {
             map.setRegion(originRegion, animated: false)
         }

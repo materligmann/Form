@@ -9,11 +9,11 @@ import UIKit
 
 public extension UIColor {
     @nonobjc class var mainColor: UIColor {
-        return #colorLiteral(red: 1, green: 0.9120932221, blue: 0.6721655726, alpha: 1)
+        return .black
     }
     
     @nonobjc class var backColor: UIColor {
-        return #colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)
+        return .white
     }
     
     @nonobjc class var backLightColor: UIColor {

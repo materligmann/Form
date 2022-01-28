@@ -39,9 +39,9 @@ public class TitleCell: UITableViewCell {
     // MARK: Configure
     
     private func configureValueLabel() {
-        valueLabel.font = UIFont.systemFont(ofSize: 25, weight: .black)
+        valueLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         valueLabel.textColor = .mainColor
-        valueLabel.textAlignment = .right
+        valueLabel.textAlignment = .left
         valueLabel.lineBreakMode = .byTruncatingMiddle
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(valueLabel)

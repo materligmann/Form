@@ -37,6 +37,9 @@ public class ImageCell: UITableViewCell {
     // MARK: Set
     
     func set(entry: ImageEntry) {
+        if let color = entry.color {
+            iconImageView.tintColor = color
+        }
         if let image = entry.image {
             iconImageView.image = image
         } else if let url = entry.url {

@@ -39,13 +39,13 @@ public class TitleCell: UITableViewCell {
     // MARK: Configure
     
     private func configureValueLabel() {
-        valueLabel.font = UIFont.systemFont(ofSize: 30, weight: .black)
+        valueLabel.font = UIFont.systemFont(ofSize: 25, weight: .black)
         valueLabel.textColor = .mainColor
         valueLabel.textAlignment = .right
         valueLabel.lineBreakMode = .byTruncatingMiddle
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(valueLabel)
-        valueLabel.leftAnchor.constraint(equalTo: contentView.rightAnchor, constant: 16).isActive = true
+        valueLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
         valueLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
         valueLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         valueLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true

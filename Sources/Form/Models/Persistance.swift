@@ -25,6 +25,15 @@ public class Persistance {
         }
     }
     
+    static func saveNew<T: Codable>(object: T, key: String) {
+        if var savedObjects: [T] = Persistance.get(key: key) {
+            savedObjects.append(object)
+            Persistance.save(objects: savedObjects, key: key)
+        } else {
+            Persistance.save(objects: [object], key: key)
+        }
+    }
+    
 //    public static func set<Codable>(key: String, value: Codable) {
 //        UserDefaults.standard.set(value, forKey: key)
 //    }
@@ -34,23 +43,6 @@ public class Persistance {
 //            return obj
 //        }
 //        return nil
-//    }
-//
-//
-//    static func saveNew<T: Codable>(obj: T, objKey: String) {
-//        let encoder = JSONEncoder()
-//        if var savedQuestions = Persistance.get<T>(key: objKey) {
-//            savedQuestions.append(question)
-//            if let savedTransactionsEncoded = try? encoder.encode(savedQuestions) {
-//                let defaults = UserDefaults.standard
-//                defaults.set(savedTransactionsEncoded, forKey: "questions")
-//            }
-//        } else {
-//            if let savedQuestionEncoded = try? encoder.encode([question]) {
-//                let defaults = UserDefaults.standard
-//                defaults.set(savedQuestionEncoded, forKey: "questions")
-//            }
-//        }
 //    }
 //
 //

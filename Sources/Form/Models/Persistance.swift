@@ -34,6 +34,7 @@ public class Persistance {
         }
     }
     
+    
 //    public static func set<Codable>(key: String, value: Codable) {
 //        UserDefaults.standard.set(value, forKey: key)
 //    }

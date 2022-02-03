@@ -12,8 +12,8 @@ public class Persistance {
         UserDefaults.standard.set(value, forKey: key)
     }
     
-    public static func get<Codable>(key: String, value: Codable) -> Codable? {
-        if let obj = UserDefaults.standard.object(forKey: key) as? Codable {
+    public static func get<T>(key: String) -> T? {
+        if let obj = UserDefaults.standard.object(forKey: key) as? T {
             return obj
         }
         return nil

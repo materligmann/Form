@@ -25,7 +25,7 @@ public class Persistance {
         }
     }
     
-    static func saveNew<T: Codable>(object: T, key: String) {
+    public static func saveNew<T: Codable>(object: T, key: String) {
         if var savedObjects: [T] = Persistance.get(key: key) {
             savedObjects.append(object)
             Persistance.save(objects: savedObjects, key: key)

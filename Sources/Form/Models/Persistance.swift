@@ -12,10 +12,11 @@ public class Persistance {
         UserDefaults.standard.set(value, forKey: key)
     }
     
-    public static func get<Codable>(key: String, value: Codable) {
+    public static func get<Codable>(key: String, value: Codable) -> Codable? {
         if let obj = UserDefaults.standard.object(forKey: key) as? Codable {
-            
+            return obj
         }
+        return nil
     }
     
 }

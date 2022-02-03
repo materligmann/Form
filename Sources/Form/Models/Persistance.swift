@@ -8,7 +8,14 @@
 import Foundation
 
 public class Persistance {
-    public static func register(key: String, value: Codable) {
+    public static func set<Codable>(key: String, value: Codable) {
         UserDefaults.standard.set(value, forKey: key)
     }
+    
+    public static func get<Codable>(key: String, value: Codable) {
+        if let obj = UserDefaults.standard.object(forKey: key) as? Codable {
+            
+        }
+    }
+    
 }

@@ -132,7 +132,7 @@ public class ViewModel {
                 }
             }
         case .camera:
-            return CGFloat(200)
+            return CGFloat(300)
         default:
             return tableView.rowHeight
         }

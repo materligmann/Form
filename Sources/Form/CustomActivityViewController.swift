@@ -13,7 +13,7 @@ public class CustomActivityViewController: UIActivityViewController {
     
     private let onDismiss: (() -> Void)?
 
-    required init(controller: UIViewController, onDismiss: (() -> Void)? = nil) {
+    required public init(controller: UIViewController, onDismiss: (() -> Void)? = nil) {
         self.controller = controller
         self.onDismiss = onDismiss
         super.init(activityItems: [], applicationActivities: nil)

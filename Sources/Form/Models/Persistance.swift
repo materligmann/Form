@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Persistance {
+public class Persistance {
     static func register(key: String, value: Codable) {
         UserDefaults.standard.set(value, forKey: key)
     }

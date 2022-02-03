@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomActivityViewController: UIActivityViewController {
+public class CustomActivityViewController: UIActivityViewController {
 
     private let controller: UIViewController!
     
@@ -19,7 +19,7 @@ class CustomActivityViewController: UIActivityViewController {
         super.init(activityItems: [], applicationActivities: nil)
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         let subViews = self.view.subviews

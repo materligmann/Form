@@ -10,18 +10,18 @@ import Foundation
 public class Persistance {
     public static func get<T: Codable>(key: String) -> [T]? {
         let decoder = JSONDecoder()
-        if let encodedTransactions = UserDefaults.standard.object(forKey: key) as? Data,
-           let questions = try? decoder.decode([T].self, from: encodedTransactions) {
-            return questions
+        if let encoded = UserDefaults.standard.object(forKey: key) as? Data,
+           let objects = try? decoder.decode([T].self, from: encoded) {
+            return objects
         }
         return nil
     }
     
-    public static func save<T: Codable>(questions: [T], key: String) {
+    public static func save<T: Codable>(objects: [T], key: String) {
         let encoder = JSONEncoder()
-        if let savedQuestionEncoded = try? encoder.encode(questions) {
+        if let savedEncoded = try? encoder.encode(objects) {
             let defaults = UserDefaults.standard
-            defaults.set(savedQuestionEncoded, forKey: key)
+            defaults.set(savedEncoded, forKey: key)
         }
     }
     

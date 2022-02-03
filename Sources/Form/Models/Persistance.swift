@@ -34,6 +34,17 @@ public class Persistance {
         }
     }
     
+    public static func delete<T: Equatable & Codable>(deletedObject: T, key: String) {
+        if var savedObjects: [T] = Persistance.get(key: key) {
+            for (i, object) in savedObjects.enumerated() {
+                if object == deletedObject {
+                    savedObjects.remove(at: i)
+                }
+            }
+            Persistance.save(objects: savedObjects, key: key)
+        }
+    }
+    
     
 //    public static func set<Codable>(key: String, value: Codable) {
 //        UserDefaults.standard.set(value, forKey: key)

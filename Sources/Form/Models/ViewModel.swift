@@ -143,6 +143,8 @@ public class ViewModel {
         switch type {
         case .basic(let basicEntry):
             return basicEntry.supressable
+        case .text(let textEntry):
+            return textEntry.supressable
         default:
             return false
         }

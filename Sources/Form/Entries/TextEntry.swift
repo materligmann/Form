@@ -12,14 +12,17 @@ public struct TextEntry {
     let value: String?
     var action: (()-> Void)?
     var disclosure: Bool = false
+    var supressable: Bool = false
     
     public init(placeholder: String?,
                 value: String?,
                 action: (()-> Void)?,
-                disclosure: Bool = false) {
+                disclosure: Bool = false,
+                supressable: Bool = false) {
         self.placeholder = placeholder
         self.value = value
         self.action = action
         self.disclosure = disclosure
+        self.supressable = supressable
     }
 }

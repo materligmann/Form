@@ -8,7 +8,7 @@
 import Foundation
 
 public class Persistance {
-    public static func get<T>(key: String) -> [T]? where T: Codable {
+    public static func get<T: Codable>(key: String) -> [T]?{
         let decoder = JSONDecoder()
         if let encoded = UserDefaults.standard.object(forKey: key) as? Data,
            let objects = try? decoder.decode([T].self, from: encoded) {

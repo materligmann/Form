@@ -39,9 +39,10 @@ public class Persistance {
             for (i, object) in savedObjects.enumerated() {
                 if object == deletedObject {
                     savedObjects.remove(at: i)
+                    Persistance.save(objects: savedObjects, key: key)
+                    return
                 }
             }
-            Persistance.save(objects: savedObjects, key: key)
         }
     }
     

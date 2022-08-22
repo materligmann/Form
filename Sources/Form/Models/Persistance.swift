@@ -51,6 +51,15 @@ public class Persistance {
         }
     }
     
+    public static func modifyArray<T: Codable>(object: T, key: String, for index: Int) {
+        if var savedObjects: [T] = Persistance.getArray(key: key) {
+            savedObjects[index] = object
+            Persistance.saveArray(objects: savedObjects, key: key)
+        } else {
+            Persistance.saveArray(objects: [object], key: key)
+        }
+    }
+    
     public static func delete<T: Equatable & Codable>(deletedObject: T, key: String) {
         if var savedObjects: [T] = Persistance.getArray(key: key) {
             for (i, object) in savedObjects.enumerated() {

@@ -36,8 +36,8 @@ public class RankingCell: UITableViewCell {
         rankingLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(rankingLabel)
         rankingLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
-        rankingLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        rankingLabel.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        rankingLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        rankingLabel.widthAnchor.constraint(equalToConstant: 30).isActive = true
         rankingLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
     }
     

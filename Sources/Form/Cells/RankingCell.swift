@@ -30,7 +30,9 @@ public class RankingCell: UITableViewCell {
     // MARK: Set
     
     private func configureRankingLabel() {
-        rankingLabel.backgroundColor = #colorLiteral(red: 1, green: 0.347936362, blue: 0.2113807499, alpha: 1)
+        rankingLabel.textAlignment = .center
+        rankingLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        rankingLabel.textColor = .white
         rankingLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(rankingLabel)
         rankingLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
@@ -40,6 +42,7 @@ public class RankingCell: UITableViewCell {
     }
     
     func set(entry: RankingEntry) {
+        rankingLabel.backgroundColor = entry.rankingColor
         rankingLabel.text = entry.ranking
     }
 }

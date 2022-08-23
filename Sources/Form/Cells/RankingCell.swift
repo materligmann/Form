@@ -34,6 +34,7 @@ public class RankingCell: UITableViewCell {
     
     private func configureRankingLabel() {
         rankingLabel.layer.cornerRadius = 5
+        rankingLabel.clipsToBounds = true
         rankingLabel.textAlignment = .center
         rankingLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         rankingLabel.textColor = .white

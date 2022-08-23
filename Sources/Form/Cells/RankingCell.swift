@@ -45,6 +45,7 @@ public class RankingCell: UITableViewCell {
     }
     
     private func configureRankingIcon() {
+        rankingIcon.tintColor = .darkText
         rankingIcon.image = UIImage(systemName: "line.3.horizontal")
         rankingIcon.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(rankingIcon)
@@ -55,7 +56,6 @@ public class RankingCell: UITableViewCell {
     }
     
     private func configureNameLabel() {
-        nameLabel.textAlignment = .center
         nameLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(nameLabel)

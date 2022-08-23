@@ -30,4 +30,5 @@ public enum EntryType {
     case alert(FormModels.AlertEntry)
     case camera(CameraEntry)
     case title(TitleEntry)
+    case ranking(RankingEntry)
 }

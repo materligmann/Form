@@ -108,6 +108,10 @@ public class ViewModel {
             return getTitleCell(indexPath: indexPath,
                                 tableView: tableView,
                                 entry: titleEntry)
+        case .ranking(let rankingEntry):
+            return getRankingCell(indexPath: indexPath,
+                                  tableView: tableView,
+                                  entry: rankingEntry)
         }
     }
     
@@ -427,6 +431,17 @@ public class ViewModel {
                                entry: TitleEntry) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: TitleCell.cellIdentifier, for: indexPath) as? TitleCell {
+            cell.set(entry: entry)
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    private func getRankingCell(indexPath: IndexPath,
+                               tableView: UITableView,
+                               entry: RankingEntry) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(
+            withIdentifier: RankingCell.cellIdentifier, for: indexPath) as? RankingCell {
             cell.set(entry: entry)
             return cell
         }

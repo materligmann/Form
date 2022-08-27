@@ -11,4 +11,9 @@ import CoreLocation
 public struct BasicMapEntry {
     let coordinate: CLLocationCoordinate2D
     let title: String?
+    
+    public init(coordinate: CLLocationCoordinate2D, title: String?) {
+        self.coordinate = coordinate
+        self.title = title
+    }
 }

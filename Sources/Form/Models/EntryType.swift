@@ -31,4 +31,5 @@ public enum EntryType {
     case camera(CameraEntry)
     case title(TitleEntry)
     case ranking(RankingEntry)
+    case basicMap(BasicMapEntry)
 }

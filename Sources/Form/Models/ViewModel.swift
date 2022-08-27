@@ -112,6 +112,10 @@ public class ViewModel {
             return getRankingCell(indexPath: indexPath,
                                   tableView: tableView,
                                   entry: rankingEntry)
+        case .basicMap(let basicMapEntry):
+            return getBasicMapCell(indexPath: indexPath,
+                                   tableView: tableView,
+                                   entry: basicMapEntry)
         }
     }
     
@@ -442,6 +446,17 @@ public class ViewModel {
                                entry: RankingEntry) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: RankingCell.cellIdentifier, for: indexPath) as? RankingCell {
+            cell.set(entry: entry)
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    private func getBasicMapCell(indexPath: IndexPath,
+                                 tableView: UITableView,
+                                 entry: BasicMapEntry) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(
+            withIdentifier: BasicMapCell.cellIdentifier, for: indexPath) as? BasicMapCell {
             cell.set(entry: entry)
             return cell
         }

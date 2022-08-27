@@ -47,7 +47,7 @@ public class RankingCell: UITableViewCell {
     }
     
     private func configureRankingIcon() {
-        rankingIcon.tintColor = .darkText
+        rankingIcon.tintColor = .lightGray
         rankingIcon.image = UIImage(systemName: "line.3.horizontal")
         rankingIcon.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(rankingIcon)

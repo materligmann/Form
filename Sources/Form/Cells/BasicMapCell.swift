@@ -54,8 +54,8 @@ public class BasicMapCell: UITableViewCell {
     }
     
     func set(entry: BasicMapEntry) {
-        map.setRegion(MKCoordinateRegion(center: entry.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01,
-                                                                                          longitudeDelta: 0.01)),
+        map.setRegion(MKCoordinateRegion(center: entry.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1,
+                                                                                          longitudeDelta: 0.1)),
                       animated: false)
         valueLabel.text = entry.title ?? "Configure your ad"
     }

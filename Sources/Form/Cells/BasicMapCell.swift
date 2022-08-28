@@ -35,6 +35,7 @@ public class BasicMapCell: UITableViewCell {
     // MARK: Set
     
     private func configureMap() {
+        map.delegate = self
         map.layer.cornerRadius = 5
         map.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(map)
@@ -57,6 +58,28 @@ public class BasicMapCell: UITableViewCell {
         map.setRegion(MKCoordinateRegion(center: entry.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1,
                                                                                           longitudeDelta: 0.1)),
                       animated: false)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = entry.coordinate
+        map.addAnnotation(annotation)
         valueLabel.text = entry.title ?? "Configure your ad"
+    }
+}
+
+extension BasicMapCell: MKMapViewDelegate {
+    public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "PinAnnotationIdentifier"
+        
+        let pinView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        
+        pinView.annotation = annotation
+        pinView.clusteringIdentifier = "clusterId"
+        pinView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        
+        pinView.markerTintColor = .black
+        pinView.canShowCallout = false
+        pinView.glyphImage = UIImage(systemName: "b.circle")
+        
+        
+        return pinView
     }
 }

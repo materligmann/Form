@@ -23,7 +23,9 @@ public class BasicMapCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        accessoryType = .disclosureIndicator
         configureMap()
+        configureValueLabel()
     }
     
     required init?(coder: NSCoder) {
@@ -42,14 +44,19 @@ public class BasicMapCell: UITableViewCell {
         map.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
     }
     
-    func setAccessory(accessory: UITableViewCell.AccessoryType) {
-        accessoryType = accessory
+    private func configureValueLabel() {
+        valueLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(valueLabel)
+        valueLabel.leftAnchor.constraint(equalTo: map.rightAnchor, constant: 5).isActive = true
+        valueLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
+        valueLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        valueLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
     }
     
     func set(entry: BasicMapEntry) {
         map.setRegion(MKCoordinateRegion(center: entry.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01,
                                                                                           longitudeDelta: 0.01)),
                       animated: false)
-        textLabel?.text = entry.title ?? "Configure your ad"
+        valueLabel.text = entry.title ?? "Configure your ad"
     }
 }

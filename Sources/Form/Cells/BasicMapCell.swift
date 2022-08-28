@@ -36,6 +36,7 @@ public class BasicMapCell: UITableViewCell {
     
     private func configureMap() {
         map.delegate = self
+        map.isUserInteractionEnabled = false
         map.layer.cornerRadius = 5
         map.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(map)
@@ -58,6 +59,7 @@ public class BasicMapCell: UITableViewCell {
         map.setRegion(MKCoordinateRegion(center: entry.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1,
                                                                                           longitudeDelta: 0.1)),
                       animated: false)
+        map.removeAnnotations(map.annotations)
         let annotation = MKPointAnnotation()
         annotation.coordinate = entry.coordinate
         map.addAnnotation(annotation)

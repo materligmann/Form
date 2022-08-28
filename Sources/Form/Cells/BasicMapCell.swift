@@ -38,8 +38,8 @@ public class BasicMapCell: UITableViewCell {
         map.layer.cornerRadius = 5
         map.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(map)
-        map.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        map.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        map.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        map.widthAnchor.constraint(equalToConstant: 60).isActive = true
         map.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
         map.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
     }

@@ -116,6 +116,10 @@ public class ViewModel {
             return getBasicMapCell(indexPath: indexPath,
                                    tableView: tableView,
                                    entry: basicMapEntry)
+        case .imageSelection(let imageSelectionEntry):
+            return getImageSelectionCell(indexPath: indexPath,
+                                         tableView: tableView,
+                                         entry: imageSelectionEntry)
         }
     }
     
@@ -132,6 +136,8 @@ public class ViewModel {
         let type = sections[indexPath.section].entries[indexPath.row].entryType
         switch type {
         case .image(let entry):
+            return CGFloat(entry.height)
+        case .imageSelection(let entry):
             return CGFloat(entry.height)
         case .map(let entry):
             switch entry.mode {
@@ -461,6 +467,17 @@ public class ViewModel {
                                  entry: BasicMapEntry) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: BasicMapCell.cellIdentifier, for: indexPath) as? BasicMapCell {
+            cell.set(entry: entry)
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    private func getImageSelectionCell(indexPath: IndexPath,
+                                       tableView: UITableView,
+                                       entry: ImageSelectionEntry) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(
+            withIdentifier: ImageSelectionCell.cellIdentifier, for: indexPath) as? ImageSelectionCell {
             cell.set(entry: entry)
             return cell
         }

@@ -190,6 +190,8 @@ public class ViewModel {
             alertEntry.alert.action?()
         case .basicMap(let basicMapEntry):
             basicMapEntry.action()
+        case .imageSelection(let imageSelectionEntry):
+            imageSelectionEntry.action?()
         default:
             break
         }

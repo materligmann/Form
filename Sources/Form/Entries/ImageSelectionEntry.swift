@@ -14,8 +14,10 @@ public struct ImageSelectionEntry {
     let placeholder: String?
     let color: UIColor?
     let action: (() -> Void)?
+    let contentMode: UIView.ContentMode
     
     public init(image: UIImage?,
+                contentMode: UIView.ContentMode,
                 url: URL?,
                 height: Int,
                 placeholder: String?,
@@ -27,5 +29,6 @@ public struct ImageSelectionEntry {
         self.placeholder = placeholder
         self.color = color
         self.action = action
+        self.contentMode = contentMode
     }
 }

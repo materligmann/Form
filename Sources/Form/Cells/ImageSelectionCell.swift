@@ -42,6 +42,7 @@ public class ImageSelectionCell: UITableViewCell {
         } else if let url = entry.url {
             iconImageView.downloaded(from: url)
         }
+        iconImageView.contentMode = entry.contentMode
         placeholder = entry.placeholder
         placeholderLabel.text = placeholder
     }

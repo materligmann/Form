@@ -57,9 +57,9 @@ public class ImageSelectionCell: UITableViewCell {
         iconImageView.contentMode = .scaleAspectFit
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(iconImageView)
-        iconImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
+        iconImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
         iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
-        iconImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
+        iconImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -0).isActive = true
         iconImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8).isActive = true
     }
     

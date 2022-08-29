@@ -20,7 +20,7 @@ public struct ImageSelectionEntry {
                 height: Int,
                 placeholder: String?,
                 color: UIColor?,
-                action: @escaping (() -> Void)?) {
+                action: (() -> Void)?) {
         self.image = image
         self.url = url
         self.height = height

@@ -182,6 +182,8 @@ public class ViewModel {
             transactionEntry.action?()
         case .alert(let alertEntry):
             alertEntry.alert.action?()
+        case .basicMap(let basicMapEntry):
+            basicMapEntry.action()
         default:
             break
         }

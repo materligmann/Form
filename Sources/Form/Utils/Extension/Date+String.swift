@@ -8,13 +8,13 @@
 import Foundation
 
 extension Date {
-    func toHour() -> String? {
+    public func toHour() -> String? {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         return formatter.string(from: self)
     }
     
-    func toDay() -> String? {
+    public func toDay() -> String? {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         return formatter.string(from: self)

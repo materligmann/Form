@@ -11,15 +11,15 @@ import Foundation
 private let badChars = CharacterSet.alphanumerics.inverted
 
 extension String {
-    var uppercasingFirst: String {
+    public var uppercasingFirst: String {
         return prefix(1).uppercased() + dropFirst()
     }
     
-    var lowercasingFirst: String {
+    public var lowercasingFirst: String {
         return prefix(1).lowercased() + dropFirst()
     }
     
-    var camelized: String {
+    public var camelized: String {
         guard !isEmpty else {
             return ""
         }

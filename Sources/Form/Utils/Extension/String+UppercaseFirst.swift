@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    func uppercaseFirst() -> String {
+    public func uppercaseFirst() -> String {
         return prefix(1).capitalized + dropFirst()
     }
 

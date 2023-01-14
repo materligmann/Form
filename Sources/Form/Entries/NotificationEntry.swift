@@ -10,4 +10,9 @@ import Foundation
 public struct NotificationEntry {
     let numberOfNotification: Int
     let text: String
+    
+    public init(numberOfNotification: Int, text: String) {
+        self.numberOfNotification = numberOfNotification
+        self.text = text
+    }
 }

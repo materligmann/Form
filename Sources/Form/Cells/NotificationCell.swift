@@ -49,8 +49,8 @@ public class NotificationCell: UITableViewCell {
         notificationImageView.tintColor = .red
         notificationImageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(notificationImageView)
-        notificationImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        notificationImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        notificationImageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        notificationImageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         notificationImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
         notificationImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
     }

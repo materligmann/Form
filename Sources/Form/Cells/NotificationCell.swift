@@ -35,7 +35,9 @@ public class NotificationCell: UITableViewCell {
     func set(entry: NotificationEntry) {
         valueLabel.text = entry.text
         if entry.numberOfNotification == 0 {
+            notificationImageView.isHidden = true
         } else {
+            notificationImageView.isHidden = false
             notificationImageView.image = UIImage(systemName: "\(entry.numberOfNotification).circle.fill")
         }
     }

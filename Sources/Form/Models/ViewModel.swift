@@ -120,6 +120,10 @@ public class ViewModel {
             return getImageSelectionCell(indexPath: indexPath,
                                          tableView: tableView,
                                          entry: imageSelectionEntry)
+        case .notification(let notificationEntry):
+            return getNotificationCell(indexPath: indexPath,
+                                       tableView: tableView,
+                                       entry: notificationEntry)
         }
     }
     
@@ -480,6 +484,17 @@ public class ViewModel {
                                        entry: ImageSelectionEntry) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: ImageSelectionCell.cellIdentifier, for: indexPath) as? ImageSelectionCell {
+            cell.set(entry: entry)
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    private func getNotificationCell(indexPath: IndexPath,
+                                       tableView: UITableView,
+                                       entry: NotificationEntry) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(
+            withIdentifier: NotificationCell.cellIdentifier, for: indexPath) as? NotificationCell {
             cell.set(entry: entry)
             return cell
         }

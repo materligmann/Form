@@ -42,12 +42,14 @@ public class Persistance {
         }
     }
     
-    public static func saveNewArray<T: Codable>(object: T, key: String) {
+    public static func saveNewArray<T: Codable>(object: T, key: String) -> Int {
         if var savedObjects: [T] = Persistance.getArray(key: key) {
             savedObjects.append(object)
             Persistance.saveArray(objects: savedObjects, key: key)
+            return savedObjects.count - 1
         } else {
             Persistance.saveArray(objects: [object], key: key)
+            return 0
         }
     }
     

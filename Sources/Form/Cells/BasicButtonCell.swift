@@ -83,7 +83,7 @@ public class BasicButtonCell: UITableViewCell {
         activityIndicator.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
     }
     
-    func enable(enabled: Bool) {
+    public func enable(enabled: Bool) {
         if enabled {
             button.isEnabled = true
             button.backgroundColor = color

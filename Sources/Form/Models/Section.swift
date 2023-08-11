@@ -8,7 +8,7 @@
 import Foundation
 
 public struct Section {
-    let title: String?
+    public let title: String?
     public var entries: [Entry]
     
     public init(title: String?, entries: [Entry]) {

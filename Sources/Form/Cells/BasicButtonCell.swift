@@ -17,6 +17,9 @@ public class BasicButtonCell: UITableViewCell {
     private let button = UIButton()
     private let activityIndicator = UIActivityIndicatorView()
     
+    private var color: UIColor?
+    private var disabledColor: UIColor?
+    
     private var buttonAction: (() -> Void)?
     
     // MARK: Lifecycle
@@ -34,11 +37,19 @@ public class BasicButtonCell: UITableViewCell {
     // MARK: Set
     
     func set(entry: BasicButtonEntry) {
+        self.color = entry.color
+        self.disabledColor = entry.disabledColor
+        if entry.enabled {
+            button.isEnabled = true
+            button.backgroundColor = color
+        } else {
+            button.isEnabled = false
+            button.backgroundColor = disabledColor
+        }
         backgroundColor = .clear
         button.tintColor = entry.tintColor
         button.imageView?.tintColor = entry.tintColor
         button.titleLabel?.font = entry.font
-        button.backgroundColor = entry.color
         button.setTitle(entry.title, for: .normal)
         button.setTitleColor(entry.tintColor, for: .normal)
         button.setTitleColor(.backColor, for: .highlighted)
@@ -70,6 +81,16 @@ public class BasicButtonCell: UITableViewCell {
         contentView.addSubview(activityIndicator)
         activityIndicator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0).isActive = true
         activityIndicator.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
+    }
+    
+    func enable(enabled: Bool) {
+        if enabled {
+            button.isEnabled = true
+            button.backgroundColor = color
+        } else {
+            button.isEnabled = false
+            button.backgroundColor = disabledColor
+        }
     }
     
     // MARK: User Action

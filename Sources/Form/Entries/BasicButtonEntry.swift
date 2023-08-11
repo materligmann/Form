@@ -17,14 +17,18 @@ public struct BasicButtonEntry {
     let onPress: (() -> Void)?
     let font: UIFont?
     let imageName: String?
+    let disabledColor: UIColor
+    let enabled: Bool
     
     public init(loading: Bool,
-         title: String?,
-         color: UIColor,
-         tintColor: UIColor,
-         onPress: (() -> Void)?,
-         font: UIFont?,
-         imageName: String?) {
+                title: String?,
+                color: UIColor,
+                tintColor: UIColor,
+                onPress: (() -> Void)?,
+                font: UIFont?,
+                imageName: String?,
+                disabledColor: UIColor,
+                enabled: Bool) {
         self.loading = loading
         self.title = title
         self.color = color
@@ -32,5 +36,7 @@ public struct BasicButtonEntry {
         self.onPress = onPress
         self.font = font
         self.imageName = imageName
+        self.disabledColor = disabledColor
+        self.enabled = enabled
     }
 }

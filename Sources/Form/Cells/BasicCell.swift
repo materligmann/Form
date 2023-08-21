@@ -36,7 +36,6 @@ public class BasicCell: UITableViewCell {
         textLabel?.textColor = entry.textColor
         backgroundColor = entry.color
         tintColor = entry.textColor
-        selectionStyle = .none
         textLabel?.text = entry.title
         
         accessoryType = entry.accesory

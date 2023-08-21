@@ -10,7 +10,7 @@ import UIKit
 public struct BasicEntry {
     let title: String
     let imageName: BasicImage
-    let action: (() -> Void)?
+    public let action: (() -> Void)?
     let accesory: UITableViewCell.AccessoryType
     let color: UIColor
     let imageColor: UIColor

@@ -36,7 +36,7 @@ public class BasicButtonCell: UITableViewCell {
     
     // MARK: Set
     
-    func set(entry: BasicButtonEntry) {
+    public func set(entry: BasicButtonEntry) {
         self.color = entry.color
         self.disabledColor = entry.disabledColor
         if entry.enabled {

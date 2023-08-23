@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 public struct ImageEntry {
-    let image: UIImage?
-    let url: URL?
-    let height: Int
-    let placeholder: String?
-    let color: UIColor?
+    public let image: UIImage?
+    public let url: URL?
+    public let height: Int
+    public let placeholder: String?
+    public let color: UIColor?
     
     public init(image: UIImage?,
                 url: URL?,

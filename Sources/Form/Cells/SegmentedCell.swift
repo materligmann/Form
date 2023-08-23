@@ -12,7 +12,7 @@ public class SegmentedCell: UITableViewCell {
     private let segmentedControl = UISegmentedControl()
     private var onSegmentChange: ((String) -> Void)?
     
-    private var segments: [FormModels.Segment]?
+    private var segments: [Segment]?
     
     public class var cellIdentifier: String {
         return "SegmentedCell"
@@ -34,7 +34,7 @@ public class SegmentedCell: UITableViewCell {
     
     // MARK: Set
     
-    func set(entry: FormModels.SegmentEntry) {
+    func set(entry: SegmentEntry) {
         self.onSegmentChange = entry.onSegmentChange
         self.segments = entry.segments
         segmentedControl.removeAllSegments()

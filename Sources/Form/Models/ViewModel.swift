@@ -263,7 +263,7 @@ public class ViewModel {
     
     private func getSegmentCell(indexPath: IndexPath,
                                 tableView: UITableView,
-                                entry: FormModels.SegmentEntry) -> UITableViewCell {
+                                entry: SegmentEntry) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: SegmentedCell.cellIdentifier, for: indexPath) as? SegmentedCell {
             cell.set(entry: entry)

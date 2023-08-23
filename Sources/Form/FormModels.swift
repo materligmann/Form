@@ -92,19 +92,6 @@ public enum FormModels {
         let indicatorColor: UIColor
     }
     
-    // MARK: Segment
-    
-    public struct SegmentEntry {
-        let segments: [Segment]
-        let onSegmentChange: (String) -> Void
-        let isEnabled: Bool
-    }
-    
-    struct Segment {
-        let name: String
-        let isSelected: Bool
-    }
-    
     // MARK: Switcher
     
     public struct SwitcherEntry {

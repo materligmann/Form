@@ -11,6 +11,12 @@ public struct SegmentEntry {
     let segments: [Segment]
     let onSegmentChange: (String) -> Void
     let isEnabled: Bool
+    
+    public init(segments: [Segment], onSegmentChange: @escaping (String) -> Void, isEnabled: Bool) {
+        self.segments = segments
+        self.onSegmentChange = onSegmentChange
+        self.isEnabled = isEnabled
+    }
 }
 
 public struct Segment {

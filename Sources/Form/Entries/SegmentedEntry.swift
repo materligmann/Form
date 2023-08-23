@@ -22,4 +22,9 @@ public struct SegmentEntry {
 public struct Segment {
     let name: String
     let isSelected: Bool
+    
+    public init(name: String, isSelected: Bool) {
+        self.name = name
+        self.isSelected = isSelected
+    }
 }

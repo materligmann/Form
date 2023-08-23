@@ -30,7 +30,7 @@ public class TextInputCell: UITableViewCell {
     
     // MARK: Set
     
-    func set(entry: TextInputEntry) {
+    public func set(entry: TextInputEntry) {
         self.onTextFieldChange = entry.onChange
         textField.keyboardType = entry.keyboardType ?? .alphabet
         textField.text = entry.defaultText

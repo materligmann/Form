@@ -34,7 +34,7 @@ public class SegmentedCell: UITableViewCell {
     
     // MARK: Set
     
-    func set(entry: SegmentEntry) {
+    public func set(entry: SegmentEntry) {
         self.onSegmentChange = entry.onSegmentChange
         self.segments = entry.segments
         segmentedControl.removeAllSegments()

@@ -150,8 +150,7 @@ public class ScanViewController: UIViewController {
     // MARK: User Action
     
     private func onCodeFound(code: String) {
-        navigationController?.dismiss(animated: true, completion: nil)
-        request.onCodeFound?(code)
+        navigationController?.dismiss(animated: true, completion: { self.request.onCodeFound?(code) })
     }
     
     @objc private func dismissButtonWasPressed() {

@@ -127,7 +127,10 @@ public class ScanViewController: UIViewController {
         previewLayer.frame = captureView.layer.bounds
         previewLayer.videoGravity = .resizeAspectFill
         captureView.layer.addSublayer(previewLayer)
-        captureSession.startRunning()
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.captureSession.startRunning()
+        }
     }
     
     // MARK: Errors
@@ -162,8 +165,9 @@ public class ScanViewController: UIViewController {
 
 extension ScanViewController: AVCaptureMetadataOutputObjectsDelegate {
     public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        captureSession.stopRunning()
-        
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.captureSession.stopRunning()
+        }
         if let metadataObject = metadataObjects.first {
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
             guard let stringValue = readableObject.stringValue else { return }

@@ -160,9 +160,7 @@ public class ScanViewController: UIViewController {
 
 extension ScanViewController: AVCaptureMetadataOutputObjectsDelegate {
     public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.captureSession.stopRunning()
-        }
+        self.captureSession.stopRunning()
         if let metadataObject = metadataObjects.first {
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
             guard let stringValue = readableObject.stringValue else { return }

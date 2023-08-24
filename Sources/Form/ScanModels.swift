@@ -8,8 +8,8 @@
 import Foundation
 import AVFoundation
 
-enum ScanModels {
-    struct Request {
+public enum ScanModels {
+    public struct Request {
         var scanType: [AVMetadataObject.ObjectType]
         var onCodeFound: ((String) -> Void)?
     }

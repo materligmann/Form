@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class ScanViewController: UIViewController {
+public class ScanViewController: UIViewController {
     
     private let captureView = UIView()
     private let dismissButton = UIBarButtonItem()
@@ -19,7 +19,7 @@ class ScanViewController: UIViewController {
     
     // MARK: Lifecycle
     
-    init(request: ScanModels.Request) {
+    public init(request: ScanModels.Request) {
         self.request = request
         super.init(nibName: nil, bundle: nil)
     }
@@ -28,7 +28,7 @@ class ScanViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         configureTitle()
         configureNavigation()
@@ -37,14 +37,14 @@ class ScanViewController: UIViewController {
         configureScan()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if captureSession.isRunning == false {
             captureSession.startRunning()
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if captureSession.isRunning == true {
             captureSession.stopRunning()
@@ -154,7 +154,7 @@ class ScanViewController: UIViewController {
 }
 
 extension ScanViewController: AVCaptureMetadataOutputObjectsDelegate {
-    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+    public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         captureSession.stopRunning()
         
         if let metadataObject = metadataObjects.first {

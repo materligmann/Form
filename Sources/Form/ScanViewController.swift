@@ -30,6 +30,7 @@ public class ScanViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        configureDismissButton()
         configureTitle()
         configureNavigation()
         configureBackground()
@@ -53,6 +54,13 @@ public class ScanViewController: UIViewController {
     
     // MARK: Configure
     
+    private func configureDismissButton() {
+        dismissButton.image = UIImage(systemName: "xmark")
+        dismissButton.target = self
+        dismissButton.action = #selector(dismissButtonWasPressed)
+        navigationItem.leftBarButtonItem = dismissButton
+    }
+    
     private func configureTitle() {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font:
                                                                     UIFont.systemFont(ofSize: 20, weight: .bold)]
@@ -66,7 +74,6 @@ public class ScanViewController: UIViewController {
     
     private func configureNavigation() {
         navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.tintColor = .mainColor
     }
     
     private func configureCaptureView() {

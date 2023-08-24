@@ -150,16 +150,12 @@ public class ScanViewController: UIViewController {
     // MARK: User Action
     
     private func onCodeFound(code: String) {
-        navigationController?.popViewController(animated: true)
+        navigationController?.dismiss(animated: true, completion: nil)
         request.onCodeFound?(code)
     }
     
     @objc private func dismissButtonWasPressed() {
         navigationController?.dismiss(animated: true, completion: nil)
-    }
-    
-    func previous() {
-        navigationController?.popViewController(animated: true)
     }
 }
 

@@ -35,7 +35,7 @@ public class DateAndTimeCell: UITableViewCell {
     
     // MARK: Set
     
-    func set(entry: DateAndTimeEntry) {
+    public func set(entry: DateAndTimeEntry) {
         self.onDateChangedAction = entry.onDateChangedAction
     }
     

@@ -31,7 +31,7 @@ public class TextCell: UITableViewCell {
     
     // MARK: Set
     
-    func set(entry: TextEntry) {
+    public func set(entry: TextEntry) {
         placeholderLabel.text = entry.placeholder
         valueLabel.text = entry.value
         if entry.disclosure {

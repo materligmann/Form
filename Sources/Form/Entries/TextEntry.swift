@@ -10,7 +10,7 @@ import Foundation
 public struct TextEntry {
     let placeholder: String?
     let value: String?
-    var action: (()-> Void)?
+    public var action: (()-> Void)?
     var disclosure: Bool = false
     var supressable: Bool = false
     

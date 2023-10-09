@@ -66,9 +66,9 @@ public class ImageButtonCell: UITableViewCell {
         
         switch entry.image {
         case .system(let str):
-            button.setImage(UIImage(systemName: str), for: .normal)
+            buttonImageView.setImage(UIImage(systemName: str), for: .normal)
         case .image(let str):
-            button.setImage(UIImage(named: str), for: .normal)
+            buttonImageView.setImage(UIImage(named: str), for: .normal)
         case .url(_):
             break
         case .none:

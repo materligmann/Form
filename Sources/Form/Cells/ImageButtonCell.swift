@@ -90,8 +90,8 @@ public class ImageButtonCell: UITableViewCell {
         buttonImageView.contentMode = .scaleAspectFit
         buttonImageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(buttonImageView)
-        buttonImageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        buttonImageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        buttonImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        buttonImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
         buttonImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
         buttonImageView.rightAnchor.constraint(equalTo: label.leftAnchor, constant: -10).isActive = true
     }

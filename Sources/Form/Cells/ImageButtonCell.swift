@@ -55,7 +55,7 @@ public class ImageButtonCell: UITableViewCell {
         label.text = entry.title
         label.textColor = entry.tintColor
         if (entry.border) {
-            contentView.layer.borderWidth = 2
+            contentView.layer.borderWidth = 1
             contentView.layer.cornerRadius = 12
         }
         buttonAction = entry.onPress

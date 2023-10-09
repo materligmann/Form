@@ -54,7 +54,7 @@ public class BasicButtonCell: UITableViewCell {
         button.setTitleColor(entry.tintColor, for: .normal)
         button.setTitleColor(.backColor, for: .highlighted)
         if (entry.border) {
-            contentView.layer.borderWidth = 1
+            contentView.layer.borderWidth = 3
             contentView.layer.cornerRadius = 12
         }
         buttonAction = entry.onPress

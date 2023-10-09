@@ -10,6 +10,7 @@ import UIKit
 // MARK: BasicButtonEntry
 
 public struct BasicButtonEntry {
+    let border: Bool
     let loading: Bool
     let title: String?
     let color: UIColor
@@ -20,7 +21,8 @@ public struct BasicButtonEntry {
     let disabledColor: UIColor
     let enabled: Bool
     
-    public init(loading: Bool,
+    public init(border: Bool,
+                loading: Bool,
                 title: String?,
                 color: UIColor,
                 tintColor: UIColor,
@@ -38,5 +40,6 @@ public struct BasicButtonEntry {
         self.imageName = imageName
         self.disabledColor = disabledColor
         self.enabled = enabled
+        self.border = border
     }
 }

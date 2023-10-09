@@ -64,8 +64,16 @@ public class BasicButtonCell: UITableViewCell {
             activityIndicator.startAnimating()
         }
         
-        guard let imageName = entry.imageName else { return }
-        button.setImage(UIImage(systemName: imageName), for: .normal)
+        switch entry.image {
+        case .system(let str):
+            button.setImage(UIImage(systemName: str), for: .normal)
+        case .image(let str):
+            button.setImage(UIImage(named: str), for: .normal)
+        case .url(_):
+            break
+        case .none:
+            break
+        }
     }
     
     // MARK: Configure

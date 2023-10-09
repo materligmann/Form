@@ -37,6 +37,7 @@ public class DateAndTimeCell: UITableViewCell {
     
     public func set(entry: DateAndTimeEntry) {
         self.onDateChangedAction = entry.onDateChangedAction
+        picker.datePickerMode = entry.pickerMode
     }
     
     // MARK: Configure

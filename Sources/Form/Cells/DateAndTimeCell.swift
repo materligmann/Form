@@ -38,6 +38,9 @@ public class DateAndTimeCell: UITableViewCell {
     public func set(entry: DateAndTimeEntry) {
         self.onDateChangedAction = entry.onDateChangedAction
         picker.datePickerMode = entry.pickerMode
+        if let date = entry.date {
+            picker.date = date
+        }
         picker.maximumDate = entry.maximumDate
         picker.minimumDate = entry.minimumDate
     }

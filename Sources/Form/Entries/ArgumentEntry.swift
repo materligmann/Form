@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct ArgumentEntry {
+public struct ArgumentEntry {
     let image: BasicImage
     let argument: String
     
-    init(image: BasicImage, argument: String) {
+    public init(image: BasicImage, argument: String) {
         self.image = image
         self.argument = argument
     }

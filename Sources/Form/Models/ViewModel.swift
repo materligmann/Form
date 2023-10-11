@@ -104,10 +104,6 @@ public class ViewModel {
             return getCameraCell(indexPath: indexPath,
                                  tableView: tableView,
                                  entry: cameraEntry)
-        case .title(let titleEntry):
-            return getTitleCell(indexPath: indexPath,
-                                tableView: tableView,
-                                entry: titleEntry)
         case .ranking(let rankingEntry):
             return getRankingCell(indexPath: indexPath,
                                   tableView: tableView,
@@ -442,17 +438,6 @@ public class ViewModel {
                                entry: CameraEntry) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: CameraCell.cellIdentifier, for: indexPath) as? CameraCell {
-            cell.set(entry: entry)
-            return cell
-        }
-        return UITableViewCell()
-    }
-    
-    private func getTitleCell(indexPath: IndexPath,
-                               tableView: UITableView,
-                               entry: TitleEntry) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(
-            withIdentifier: TitleCell.cellIdentifier, for: indexPath) as? TitleCell {
             cell.set(entry: entry)
             return cell
         }

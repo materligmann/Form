@@ -29,7 +29,6 @@ public enum EntryType {
     case map(MapEntry)
     case alert(FormModels.AlertEntry)
     case camera(CameraEntry)
-    case title(TitleEntry)
     case ranking(RankingEntry)
     case basicMap(BasicMapEntry)
     case imageSelection(ImageSelectionEntry)

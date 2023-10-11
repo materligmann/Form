@@ -7,12 +7,12 @@
 
 import UIKit
 
-class ArgumentCell: UITableViewCell {
+public class ArgumentCell: UITableViewCell {
     
     private let iconImageView = UIImageView()
     private let argumentLabel = UILabel()
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "ArgumentCell"
     }
     
@@ -31,7 +31,7 @@ class ArgumentCell: UITableViewCell {
     
     // MARK: Set
     
-    func set(entry: ArgumentEntry) {
+    public func set(entry: ArgumentEntry) {
         switch entry.image {
         case .image(let name):
             iconImageView.image = UIImage(named: name)

@@ -8,9 +8,9 @@
 import Foundation
 
 public struct Argument {
-    let title: String
-    let argument: String
-    let image: BasicImage
+    public let title: String
+    public let argument: String
+    public let image: BasicImage
     
     public init(title: String, argument: String, image: BasicImage) {
         self.title = title

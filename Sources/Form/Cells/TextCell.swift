@@ -32,11 +32,9 @@ public class TextCell: UITableViewCell {
     // MARK: Set
     
     public func set(entry: TextEntry) {
+        accessoryType = entry.accesory
         placeholderLabel.text = entry.placeholder
         valueLabel.text = entry.value
-        if entry.disclosure {
-            accessoryType = .disclosureIndicator
-        }
     }
     
     // MARK: Configure

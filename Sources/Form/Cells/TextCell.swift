@@ -32,6 +32,7 @@ public class TextCell: UITableViewCell {
     // MARK: Set
     
     public func set(entry: TextEntry) {
+        tintColor = entry.tintColor
         accessoryType = entry.accesory
         placeholderLabel.text = entry.placeholder
         valueLabel.text = entry.value

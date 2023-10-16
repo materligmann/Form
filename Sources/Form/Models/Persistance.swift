@@ -53,6 +53,17 @@ public class Persistance {
         }
     }
     
+    public static func insertAt<T: Codable>(object: T, key: String, index: Int) -> Int {
+        if var savedObjects: [T] = Persistance.getArray(key: key) {
+            savedObjects.insert(object, at: index)
+            Persistance.saveArray(objects: savedObjects, key: key)
+            return index
+        } else {
+            Persistance.saveArray(objects: [object], key: key)
+            return 0
+        }
+    }
+    
     public static func modifyArray<T: Codable>(object: T, key: String, for index: Int) {
         if var savedObjects: [T] = Persistance.getArray(key: key) {
             savedObjects[index] = object
@@ -71,6 +82,14 @@ public class Persistance {
                     return
                 }
             }
+        }
+    }
+    
+    public static func deleteAt<T: Codable>(deletedObject: T, index: Int, key: String) {
+        if var savedObjects: [T] = Persistance.getArray(key: key) {
+            savedObjects.remove(at: index)
+            Persistance.saveArray(objects: savedObjects, key: key)
+            return
         }
     }
     

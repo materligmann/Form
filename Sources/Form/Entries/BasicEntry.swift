@@ -16,6 +16,7 @@ public struct BasicEntry {
     let imageColor: UIColor
     let textColor: UIColor
     var supressable: Bool = false
+    let font: UIFont?
     
     
     public init(title: String,
@@ -25,7 +26,8 @@ public struct BasicEntry {
                 color: UIColor,
                 imageColor: UIColor,
                 textColor: UIColor,
-                supressable: Bool = false) {
+                supressable: Bool = false,
+                font: UIFont?) {
         self.title = title
         self.imageName = imageName
         self.action = action
@@ -34,5 +36,6 @@ public struct BasicEntry {
         self.imageColor = imageColor
         self.textColor = textColor
         self.supressable = supressable
+        self.font = font
     }
 }

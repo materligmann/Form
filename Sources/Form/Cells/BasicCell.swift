@@ -34,6 +34,7 @@ public class BasicCell: UITableViewCell {
     
     public func set(entry: BasicEntry) {
         textLabel?.textColor = entry.textColor
+        textLabel?.font = entry.font
         backgroundColor = entry.color
         tintColor = entry.textColor
         textLabel?.text = entry.title

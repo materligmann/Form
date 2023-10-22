@@ -141,7 +141,7 @@ public class ViewModel {
             return CGFloat(entry.height)
         case .map(let entry):
             switch entry.mode {
-            case .get:
+            case .directions:
                 return CGFloat(200)
             case .set(let zoom):
                 if zoom {
@@ -149,6 +149,8 @@ public class ViewModel {
                 } else {
                     return CGFloat(200)
                 }
+            case .show:
+                return 400
             }
         case .camera:
             return CGFloat(300)

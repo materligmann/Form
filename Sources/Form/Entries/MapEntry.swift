@@ -13,11 +13,11 @@ import MapKit
 public struct MapEntry {
     public let onChange: ((MKCoordinateRegion) -> Void)?
     public let mode: MapEntryMode
-    public let region: MKCoordinateRegion
+    public let region: MKCoordinateRegion?
     
     public init(onChange: ((MKCoordinateRegion) -> Void)?,
                 mode: MapEntryMode,
-                region: MKCoordinateRegion) {
+                region: MKCoordinateRegion?) {
         self.onChange = onChange
         self.mode = mode
         self.region = region
@@ -26,5 +26,6 @@ public struct MapEntry {
 
 public enum MapEntryMode {
     case set(Bool)
-    case get
+    case directions
+    case show
 }

@@ -60,48 +60,56 @@ public class MapCell: UITableViewCell {
             } else {
                 map.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
             }
-        case .get:
+        case .directions:
             let userLocation = map.userLocation
-            let dest = entry.region.center
-            let distance = userLocation.location?.distance(from: CLLocation(latitude: dest.latitude, longitude: dest.longitude))
-            
-            if let distance = distance {
-            
-                self.originRegion = MKCoordinateRegion(center: userLocation.coordinate,
-                                                       latitudinalMeters: distance + distance * 0.2,
-                                                       longitudinalMeters: distance + distance * 0.2)
-                map.isUserInteractionEnabled = false
-                map.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = entry.region.center
-                map.addAnnotation(annotation)
+            if let dest = entry.region?.center {
+                let distance = userLocation.location?.distance(from: CLLocation(latitude: dest.latitude, longitude: dest.longitude))
                 
-                let request = MKDirections.Request()
-                // Source
-                let sourcePlaceMark = MKPlacemark.init(coordinate: map.userLocation.coordinate)
-                request.source = MKMapItem(placemark: sourcePlaceMark)
-                // Destination
-                let destPlaceMark = MKPlacemark(coordinate: annotation.coordinate)
-                request.destination = MKMapItem(placemark: destPlaceMark)
-                // Transport Types
-                request.transportType = [.automobile, .walking]
+                if let distance = distance {
                 
-                let directions = MKDirections(request: request)
-                directions.calculate { response, error in
-                    guard let response = response else {
-                        print("Error: \(error?.localizedDescription ?? "No error specified").")
-                        return
-                    }
+                    self.originRegion = MKCoordinateRegion(center: userLocation.coordinate,
+                                                           latitudinalMeters: distance + distance * 0.2,
+                                                           longitudinalMeters: distance + distance * 0.2)
+                    map.isUserInteractionEnabled = false
+                    map.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = dest
+                    map.addAnnotation(annotation)
                     
-                    let route = response.routes[0]
-                    self.map.addOverlay(route.polyline)
+                    let request = MKDirections.Request()
+                    // Source
+                    let sourcePlaceMark = MKPlacemark.init(coordinate: map.userLocation.coordinate)
+                    request.source = MKMapItem(placemark: sourcePlaceMark)
+                    // Destination
+                    let destPlaceMark = MKPlacemark(coordinate: annotation.coordinate)
+                    request.destination = MKMapItem(placemark: destPlaceMark)
+                    // Transport Types
+                    request.transportType = [.automobile, .walking]
+                    
+                    let directions = MKDirections(request: request)
+                    directions.calculate { response, error in
+                        guard let response = response else {
+                            print("Error: \(error?.localizedDescription ?? "No error specified").")
+                            return
+                        }
+                        
+                        let route = response.routes[0]
+                        self.map.addOverlay(route.polyline)
+                    }
                 }
             }
+        case .show:
+            break
         }
         if let originRegion = originRegion {
             map.setRegion(originRegion, animated: false)
         }
         self.onChange?(map.region)
+    }
+    
+    public func addAnnotations(annotations: [MKAnnotation]) {
+        map.removeAnnotations(map.annotations)
+        map.addAnnotations(annotations)
     }
     
     // MARK: Configure
@@ -213,9 +221,15 @@ extension MapCell: MKMapViewDelegate {
     }
     
     public func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-            let renderer = MKPolylineRenderer(overlay: overlay)
-            // Set the color for the line
-            renderer.strokeColor = .systemBlue
-            return renderer
-        }
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        // Set the color for the line
+        renderer.strokeColor = .systemBlue
+        return renderer
+    }
+    
+    public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "something")
+        annotationView.markerTintColor = .black //custom colors also work, additionally to these default ones
+        return annotationView
+    }
 }

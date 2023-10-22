@@ -217,7 +217,6 @@ extension MapCell: MKMapViewDelegate {
         let oneDegreeInKm: Double = 111139
         let precision = Int(targetRegion.span.latitudeDelta * oneDegreeInKm)
         precisionLabel.text = "\(precision) m"
-        onChange?(mapView.region)
     }
     
     public func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -225,6 +224,10 @@ extension MapCell: MKMapViewDelegate {
         // Set the color for the line
         renderer.strokeColor = .systemBlue
         return renderer
+    }
+    
+    public func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        onChange?(mapView.region)
     }
     
     public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

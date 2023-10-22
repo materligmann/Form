@@ -104,7 +104,6 @@ public class MapCell: UITableViewCell {
         if let originRegion = originRegion {
             map.setRegion(originRegion, animated: false)
         }
-        self.onChange?(map.region)
     }
     
     public func addAnnotations(annotations: [MKAnnotation]) {

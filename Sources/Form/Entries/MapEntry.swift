@@ -11,9 +11,9 @@ import MapKit
 // MARK: Map
 
 public struct MapEntry {
-    let onChange: ((MKCoordinateRegion) -> Void)?
-    let mode: MapEntryMode
-    let region: MKCoordinateRegion
+    public let onChange: ((MKCoordinateRegion) -> Void)?
+    public let mode: MapEntryMode
+    public let region: MKCoordinateRegion
     
     public init(onChange: ((MKCoordinateRegion) -> Void)?,
                 mode: MapEntryMode,

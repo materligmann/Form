@@ -140,6 +140,7 @@ public class MapCell: UITableViewCell {
         map.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 0).isActive = true
         map.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         map.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 0).isActive = true
+        map.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
     }
     
     private func configureCenterButton() {

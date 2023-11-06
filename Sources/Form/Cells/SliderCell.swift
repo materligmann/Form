@@ -32,7 +32,7 @@ public class SliderCell: UITableViewCell {
     
     // MARK: Set
     
-    func set(entry: SliderEntry) {
+    public func set(entry: SliderEntry) {
         action = entry.onSliderChange
         slider.minimumValue = Float(entry.minimum)
         slider.maximumValue = Float(entry.maximum)

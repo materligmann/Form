@@ -37,13 +37,13 @@ public class SliderCell: UITableViewCell {
         slider.minimumValue = Float(entry.minimum)
         slider.maximumValue = Float(entry.maximum)
         slider.setValue(Float(entry.initialValue), animated: false)
+        slider.tintColor = entry.tintColor
     }
     
     // MARK: Configure
     
     private func configureSlider() {
         slider.addTarget(self, action: #selector(onSliderChange), for: .valueChanged)
-        slider.tintColor = .mainColor
         slider.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(slider)
         slider.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true

@@ -34,6 +34,7 @@ public class SliderCell: UITableViewCell {
     
     public func set(entry: SliderEntry) {
         action = entry.onSliderChange
+        slider.isContinuous = entry.isContinuous
         slider.minimumValue = Float(entry.minimum)
         slider.maximumValue = Float(entry.maximum)
         slider.setValue(Float(entry.initialValue), animated: false)

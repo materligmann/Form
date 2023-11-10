@@ -8,7 +8,11 @@
 import Foundation
 
 public enum WebModels {
-    struct Request {
-        let url: String
+    public struct Request {
+        public let url: String
+        
+        public init(url: String) {
+            self.url = url
+        }
     }
 }

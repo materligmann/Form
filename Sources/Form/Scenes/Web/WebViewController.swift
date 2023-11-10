@@ -12,7 +12,7 @@ public class WebViewController: UIViewController {
     
     private let webView = WKWebView()
     
-    var request: WebModels.Request?
+    public var request: WebModels.Request?
     
     private let interactor = WebInteractor()
 

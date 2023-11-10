@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum WebModels {
+public enum WebModels {
     struct Request {
         let url: String
     }

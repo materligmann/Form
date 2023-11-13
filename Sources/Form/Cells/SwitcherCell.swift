@@ -35,9 +35,11 @@ public class SwitcherCell: UITableViewCell {
     public func set(entry: SwitcherEntry) {
         backgroundColor = entry.backgroundColor
         switcherAction = entry.onSwitchAction
+        switcher.onTintColor = entry.tintColor
         switcher.setOn(entry.isOn, animated: false)
         imageView?.tintColor = entry.imageColor
         textLabel?.text = entry.title
+        textLabel?.font = entry.font
         textLabel?.textColor = .mainColor
         switch entry.imageName {
         case .image(let name):

@@ -94,15 +94,6 @@ public enum FormModels {
     
     // MARK: Switcher
     
-    public struct SwitcherEntry {
-        let title: String
-        let backgroundColor: UIColor
-        let imageColor: UIColor
-        let imageName: BasicImage
-        let isOn: Bool
-        let onSwitchAction: ((Bool) -> Void)?
-    }
-    
     // MARK: Result
     
     public struct ResultEntry {

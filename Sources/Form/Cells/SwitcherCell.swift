@@ -32,7 +32,7 @@ public class SwitcherCell: UITableViewCell {
     
     // MARK: Set
     
-    func set(entry: FormModels.SwitcherEntry) {
+    func set(entry: SwitcherEntry) {
         backgroundColor = entry.backgroundColor
         switcherAction = entry.onSwitchAction
         switcher.setOn(entry.isOn, animated: false)

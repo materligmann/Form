@@ -17,7 +17,7 @@ public enum EntryType {
     case rightButton(FormModels.RightButtonEntry)
     case state(FormModels.StateEntry)
     case segment(SegmentEntry)
-    case switcher(FormModels.SwitcherEntry)
+    case switcher(SwitcherEntry)
     case result(FormModels.ResultEntry)
     case dateAndTime(DateAndTimeEntry)
     case picker(FormModels.PickerEntry)

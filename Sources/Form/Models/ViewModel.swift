@@ -316,7 +316,7 @@ public class ViewModel {
     
     func getSwitcherEntryCell(indexPath: IndexPath,
                            tableView: UITableView,
-                              entry: FormModels.SwitcherEntry) -> UITableViewCell {
+                              entry: SwitcherEntry) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: SwitcherCell.cellIdentifier, for: indexPath) as? SwitcherCell {
             cell.set(entry: entry)

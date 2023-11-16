@@ -43,7 +43,7 @@ public class SwitcherCell: UITableViewCell {
         textLabel?.textColor = .mainColor
         switch entry.imageName {
         case .image(let name):
-            imageView?.image = UIImage(named: name)?.resize(targetSize: CGSize(width: 40, height: 40))
+            imageView?.image = UIImage(named: name)?.resize(targetSize: CGSize(width: 30, height: 30))
         case .system(let name):
             imageView?.image = UIImage(systemName: name)
         case .url:

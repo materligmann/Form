@@ -12,6 +12,7 @@ public class SwitcherCell: UITableViewCell {
     private let placeholderLabel = UILabel()
     private let valueLabel = UILabel()
     private let switcher = UISwitch()
+    private let iconImageView = UIImageView()
     
     private var switcherAction: ((Bool) -> Void)?
     
@@ -24,6 +25,7 @@ public class SwitcherCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureSwitcher()
+        configureImageView()
     }
     
     required init?(coder: NSCoder) {
@@ -37,15 +39,15 @@ public class SwitcherCell: UITableViewCell {
         switcherAction = entry.onSwitchAction
         switcher.onTintColor = entry.tintColor
         switcher.setOn(entry.isOn, animated: false)
-        imageView?.tintColor = entry.imageColor
+        iconImageView.tintColor = entry.imageColor
         textLabel?.text = entry.title
         textLabel?.font = entry.font
         textLabel?.textColor = .mainColor
         switch entry.imageName {
         case .image(let name):
-            imageView?.image = UIImage(named: name)
+            iconImageView.image = UIImage(named: name)
         case .system(let name):
-            imageView?.image = UIImage(systemName: name)
+            iconImageView.image = UIImage(systemName: name)
         case .url:
             break
         case .none:
@@ -61,6 +63,16 @@ public class SwitcherCell: UITableViewCell {
         contentView.addSubview(switcher)
         switcher.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
         switcher.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
+    }
+    
+    private func configureImageView() {
+        iconImageView.contentMode = .scaleAspectFit
+        iconImageView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(iconImageView)
+        iconImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
+        iconImageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        iconImageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        iconImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
     }
     
     // MARK: User Action

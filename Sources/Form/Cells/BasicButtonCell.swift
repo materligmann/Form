@@ -40,7 +40,7 @@ public class BasicButtonCell: UITableViewCell {
     public func set(entry: BasicButtonEntry) {
         self.color = entry.color
         self.disabledColor = entry.disabledColor
-        self.tintColor = entry.tintColor
+        self.myTintColor = entry.tintColor
         if entry.enabled {
             button.isEnabled = true
             button.backgroundColor = color

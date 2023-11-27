@@ -19,6 +19,7 @@ public class BasicButtonCell: UITableViewCell {
     
     private var color: UIColor?
     private var disabledColor: UIColor?
+    private var myTintColor: UIColor?
     
     private var buttonAction: (() -> Void)?
     
@@ -39,6 +40,7 @@ public class BasicButtonCell: UITableViewCell {
     public func set(entry: BasicButtonEntry) {
         self.color = entry.color
         self.disabledColor = entry.disabledColor
+        self.tintColor = entry.tintColor
         if entry.enabled {
             button.isEnabled = true
             button.backgroundColor = color
@@ -99,9 +101,11 @@ public class BasicButtonCell: UITableViewCell {
         if enabled {
             button.isEnabled = true
             button.backgroundColor = color
+            button.setTitleColor(.white, for: .normal)
         } else {
             button.isEnabled = false
             button.backgroundColor = disabledColor
+            button.setTitleColor(self.myTintColor, for: .normal)
         }
     }
     

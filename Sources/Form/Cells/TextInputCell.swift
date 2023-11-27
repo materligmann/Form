@@ -33,6 +33,7 @@ public class TextInputCell: UITableViewCell {
     public func set(entry: TextInputEntry) {
         self.onTextFieldChange = entry.onChange
         textField.keyboardType = entry.keyboardType ?? .alphabet
+        textField.backgroundColor = entry.backgroundColor
         textField.text = entry.defaultText
         textField.attributedPlaceholder = NSAttributedString(
             string: entry.placeholder,

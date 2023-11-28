@@ -42,7 +42,7 @@ public class BasicButtonCell: UITableViewCell {
         self.color = entry.color
         self.disabledColor = entry.disabledColor
         self.myTintColor = entry.selectedTintColor
-        self.disabledTintColor = entry.disabledColor
+        self.disabledTintColor = entry.disabledTintColor
         if entry.enabled {
             button.isEnabled = true
             button.backgroundColor = color

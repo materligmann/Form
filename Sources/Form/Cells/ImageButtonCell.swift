@@ -50,10 +50,10 @@ public class ImageButtonCell: UITableViewCell {
             button.isEnabled = false
             backgroundColor = disabledColor
         }
-        buttonImageView.tintColor = entry.tintColor
+        buttonImageView.tintColor = entry.selectedTintColor
         label.font = entry.font
         label.text = entry.title
-        label.textColor = entry.tintColor
+        label.textColor = entry.selectedTintColor
         if (entry.border) {
             contentView.layer.borderWidth = 1
             contentView.layer.cornerRadius = 12

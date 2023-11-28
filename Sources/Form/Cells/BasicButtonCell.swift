@@ -20,6 +20,7 @@ public class BasicButtonCell: UITableViewCell {
     private var color: UIColor?
     private var disabledColor: UIColor?
     private var myTintColor: UIColor?
+    private var disabledTintColor: UIColor?
     
     private var buttonAction: (() -> Void)?
     
@@ -40,21 +41,22 @@ public class BasicButtonCell: UITableViewCell {
     public func set(entry: BasicButtonEntry) {
         self.color = entry.color
         self.disabledColor = entry.disabledColor
-        self.myTintColor = entry.tintColor
+        self.myTintColor = entry.selectedTintColor
+        self.disabledTintColor = entry.disabledColor
         if entry.enabled {
             button.isEnabled = true
             button.backgroundColor = color
+            button.setTitleColor(myTintColor, for: .normal)
         } else {
             button.isEnabled = false
             button.backgroundColor = disabledColor
+            button.setTitleColor(disabledTintColor, for: .normal)
         }
         backgroundColor = .clear
-        button.tintColor = entry.tintColor
-        button.imageView?.tintColor = entry.tintColor
+        button.tintColor = entry.selectedTintColor
+        button.imageView?.tintColor = entry.selectedTintColor
         button.titleLabel?.font = entry.font
         button.setTitle(entry.title, for: .normal)
-        button.setTitleColor(entry.tintColor, for: .normal)
-        button.setTitleColor(.backColor, for: .highlighted)
         if (entry.border) {
             contentView.layer.borderWidth = 1
             contentView.layer.cornerRadius = 12
@@ -101,11 +103,11 @@ public class BasicButtonCell: UITableViewCell {
         if enabled {
             button.isEnabled = true
             button.backgroundColor = color
-            button.setTitleColor(.white, for: .normal)
+            button.setTitleColor(myTintColor, for: .normal)
         } else {
             button.isEnabled = false
             button.backgroundColor = disabledColor
-            button.setTitleColor(self.myTintColor, for: .normal)
+            button.setTitleColor(disabledTintColor, for: .normal)
         }
     }
     

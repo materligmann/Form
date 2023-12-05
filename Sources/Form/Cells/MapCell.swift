@@ -35,7 +35,7 @@ public class MapCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureBackground()
         configureMap()
-        configureCenterButton()
+        //configureCenterButton()
         configurePrecisionLabel()
         configurePlaceholderLabel()
     }

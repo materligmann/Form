@@ -48,6 +48,10 @@ public class MapCell: UITableViewCell {
     
     public func set(entry: MapEntry) {
         self.onChange = entry.onChange
+        if entry.border {
+            map.layer.borderWidth = 2
+            map.layer.borderColor = UIColor.systemPink.cgColor
+        }
         switch entry.mode {
         case .set(let zoom):
             self.originRegion = entry.region

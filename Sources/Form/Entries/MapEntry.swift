@@ -14,13 +14,16 @@ public struct MapEntry {
     public let onChange: ((MKCoordinateRegion) -> Void)?
     public let mode: MapEntryMode
     public let region: MKCoordinateRegion?
+    public let border: Bool
     
     public init(onChange: ((MKCoordinateRegion) -> Void)?,
                 mode: MapEntryMode,
-                region: MKCoordinateRegion?) {
+                region: MKCoordinateRegion?,
+                border: Bool) {
         self.onChange = onChange
         self.mode = mode
         self.region = region
+        self.border = border
     }
 }
 

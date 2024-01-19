@@ -49,8 +49,8 @@ public class MapCell: UITableViewCell {
     public func set(entry: MapEntry) {
         self.onChange = entry.onChange
         if entry.border {
-            contentView.layer.borderWidth = 2
-            contentView.layer.borderColor = UIColor.systemPink.cgColor
+            layer.borderWidth = 2
+            layer.borderColor = UIColor.systemPink.cgColor
         }
         switch entry.mode {
         case .set(let zoom):

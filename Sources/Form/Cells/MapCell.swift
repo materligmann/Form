@@ -49,7 +49,7 @@ public class MapCell: UITableViewCell {
     public func set(entry: MapEntry) {
         self.onChange = entry.onChange
         if entry.border {
-            layer.borderWidth = 2
+            layer.borderWidth = 4
             layer.borderColor = UIColor.systemPink.cgColor
         }
         switch entry.mode {

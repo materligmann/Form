@@ -30,3 +30,19 @@ extension UIImageView {
         downloaded(from: url, contentMode: mode)
     }
 }
+
+extension URL {
+    func image(completion: @escaping (UIImage) -> Void ) {
+        URLSession.shared.dataTask(with: self) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType,
+                mimeType.hasPrefix("image"),
+                let data = data,
+                error == nil,
+                let image = UIImage(data: data)
+            else { return }
+            completion(image)
+        }.resume()
+    }
+}

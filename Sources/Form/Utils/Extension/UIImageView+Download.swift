@@ -32,7 +32,7 @@ extension UIImageView {
 }
 
 extension URL {
-    func image(completion: @escaping (UIImage) -> Void ) {
+    public func image(completion: @escaping (UIImage) -> Void ) {
         URLSession.shared.dataTask(with: self) { data, response, error in
             guard
                 let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,

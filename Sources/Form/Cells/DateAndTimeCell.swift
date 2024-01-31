@@ -45,6 +45,7 @@ public class DateAndTimeCell: UITableViewCell {
         picker.minimumDate = entry.minimumDate
         descriptionLabel.text = entry.description
         iconView.tintColor = entry.iconColor
+        picker.tintColor = entry.iconColor
     }
     
     // MARK: Configure
@@ -64,12 +65,10 @@ public class DateAndTimeCell: UITableViewCell {
     }
     
     private func configureDatePicker() {
-        picker.tintColor = .mainColor
         picker.addTarget(self, action: #selector(onDateChanged), for: .valueChanged)
         picker.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(picker)
         picker.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
-        picker.leftAnchor.constraint(equalTo: iconView.rightAnchor, constant: 32).isActive = true
         picker.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
     }
     

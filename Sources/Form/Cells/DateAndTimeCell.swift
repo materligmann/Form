@@ -68,7 +68,7 @@ public class DateAndTimeCell: UITableViewCell {
         picker.addTarget(self, action: #selector(onDateChanged), for: .valueChanged)
         picker.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(picker)
-        picker.widthAnchor.constraint(equalToConstant: 170).isActive = true
+        picker.widthAnchor.constraint(equalToConstant: 180).isActive = true
         picker.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
         picker.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
     }

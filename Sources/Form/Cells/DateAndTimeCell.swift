@@ -9,8 +9,7 @@ import UIKit
 
 public class DateAndTimeCell: UITableViewCell {
     
-    private let placeholderLabel = UILabel()
-    private let valueLabel = UILabel()
+    private let descriptionLabel = UILabel()
     private let picker = UIDatePicker()
     private let iconView = UIImageView()
     
@@ -27,6 +26,7 @@ public class DateAndTimeCell: UITableViewCell {
         configureBackground()
         configureIcon()
         configureDatePicker()
+        configureDescriptionLabel()
     }
     
     required init?(coder: NSCoder) {
@@ -43,16 +43,17 @@ public class DateAndTimeCell: UITableViewCell {
         }
         picker.maximumDate = entry.maximumDate
         picker.minimumDate = entry.minimumDate
+        descriptionLabel.text = entry.description
+        iconView.tintColor = entry.iconColor
     }
     
     // MARK: Configure
     
-    func configureBackground() {
-        backgroundColor = .backColor
+    private func configureBackground() {
+        backgroundColor = .white
     }
     
-    func configureIcon() {
-        iconView.tintColor = .mainColor
+    private func configureIcon() {
         iconView.image = UIImage(systemName: "calendar.circle.fill")
         iconView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(iconView)
@@ -70,6 +71,16 @@ public class DateAndTimeCell: UITableViewCell {
         picker.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
         picker.leftAnchor.constraint(equalTo: iconView.rightAnchor, constant: 32).isActive = true
         picker.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
+    }
+    
+    private func configureDescriptionLabel() {
+        descriptionLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(descriptionLabel)
+        descriptionLabel.leftAnchor.constraint(equalTo: iconView.rightAnchor, constant: 10).isActive = true
+        descriptionLabel.rightAnchor.constraint(equalTo: picker.leftAnchor, constant: -10).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
+        descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
     }
     
     // MARK: User Action

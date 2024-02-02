@@ -15,15 +15,17 @@ public struct MapEntry {
     public let mode: MapEntryMode
     public let region: MKCoordinateRegion?
     public let border: Bool
+    public let color: UIColor
     
     public init(onChange: ((MKCoordinateRegion) -> Void)?,
                 mode: MapEntryMode,
                 region: MKCoordinateRegion?,
-                border: Bool) {
+                border: Bool, color: UIColor) {
         self.onChange = onChange
         self.mode = mode
         self.region = region
         self.border = border
+        self.color = color
     }
 }
 

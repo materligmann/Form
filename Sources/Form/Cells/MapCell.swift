@@ -25,6 +25,8 @@ public class MapCell: UITableViewCell {
     
     private var onChange: ((MKCoordinateRegion) -> Void)?
     
+    var color: UIColor?
+    
     public class var cellIdentifier: String {
         return "MapCell"
     }
@@ -48,6 +50,7 @@ public class MapCell: UITableViewCell {
     
     public func set(entry: MapEntry) {
         self.onChange = entry.onChange
+        self.color = entry.color
         if entry.border {
             layer.borderWidth = 4
             layer.borderColor = UIColor.systemPink.cgColor
@@ -236,7 +239,7 @@ extension MapCell: MKMapViewDelegate {
     
     public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "something")
-        annotationView.markerTintColor = .black //custom colors also work, additionally to these default ones
+        annotationView.markerTintColor = color
         return annotationView
     }
 }

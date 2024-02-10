@@ -60,6 +60,7 @@ public class SliderCell: UITableViewCell {
     }
     
     private func configureDescriptionLabel() {
+        descriptionLabel.adjustsFontSizeToFitWidth = true
         descriptionLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(descriptionLabel)

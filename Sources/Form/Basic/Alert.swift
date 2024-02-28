@@ -5,7 +5,7 @@
 //  Created by Mathias Erligmann on 27/11/2021.
 //
 
-import Foundation
+import UIKit
 
 public struct Alert {
     public let title: String

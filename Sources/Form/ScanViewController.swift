@@ -41,7 +41,9 @@ public class ScanViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if captureSession.isRunning == false {
-            captureSession.startRunning()
+            DispatchQueue.global(qos: .userInitiated).async {
+                self.captureSession.startRunning()
+            }
         }
     }
     
@@ -55,10 +57,15 @@ public class ScanViewController: UIViewController {
     // MARK: Configure
     
     private func configureDismissButton() {
-        dismissButton.image = UIImage(systemName: "xmark")
-        dismissButton.target = self
-        dismissButton.action = #selector(dismissButtonWasPressed)
-        navigationItem.leftBarButtonItem = dismissButton
+        switch request.mode {
+        case .present:
+            dismissButton.image = UIImage(systemName: "xmark")
+            dismissButton.target = self
+            dismissButton.action = #selector(dismissButtonWasPressed)
+            navigationItem.leftBarButtonItem = dismissButton
+        case .navigation:
+            break
+        }
     }
     
     private func configureTitle() {
@@ -150,7 +157,12 @@ public class ScanViewController: UIViewController {
     // MARK: User Action
     
     private func onCodeFound(code: String) {
-        navigationController?.dismiss(animated: true, completion: { self.request.onCodeFound?(code) })
+        switch request.mode {
+        case .present:
+            navigationController?.dismiss(animated: true, completion: { self.request.onCodeFound?(code) })
+        case .navigation:
+            navigationController?.popViewController(animated: true, completion: {self.request.onCodeFound?(code)})
+        }
     }
     
     @objc private func dismissButtonWasPressed() {

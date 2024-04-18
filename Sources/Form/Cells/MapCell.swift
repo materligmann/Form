@@ -53,7 +53,7 @@ public class MapCell: UITableViewCell {
         self.color = entry.color
         if entry.border {
             layer.borderWidth = 4
-            layer.borderColor = UIColor.systemPink.cgColor
+            layer.borderColor = entry.color.cgColor
         }
         switch entry.mode {
         case .set(let zoom):

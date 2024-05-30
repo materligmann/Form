@@ -20,7 +20,6 @@ public class TextInputCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configureBackground()
         configureTextField()
     }
     
@@ -33,7 +32,7 @@ public class TextInputCell: UITableViewCell {
     public func set(entry: TextInputEntry) {
         self.onTextFieldChange = entry.onChange
         textField.keyboardType = entry.keyboardType ?? .alphabet
-        contentView.backgroundColor = entry.backgroundColor
+        backgroundColor = entry.backgroundColor
         textField.text = entry.defaultText
         textField.attributedPlaceholder = NSAttributedString(
             string: entry.placeholder,
@@ -43,14 +42,10 @@ public class TextInputCell: UITableViewCell {
     
     // MARK: Configure
     
-    private func configureBackground() {
-        contentView.backgroundColor = .backColor
-    }
-    
     private func configureTextField() {
         textField.keyboardType = .alphabet
         textField.autocorrectionType = .no
-        textField.textColor = .mainColor
+        textField.textColor = .black
         textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         textField.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(textField)

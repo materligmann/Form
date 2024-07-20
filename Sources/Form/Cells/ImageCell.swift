@@ -40,8 +40,8 @@ public class ImageCell: UITableViewCell {
         if let color = entry.color {
             iconImageView.tintColor = color
         }
-        if let image = entry.image {
-            iconImageView.image = image
+        if let qrString = entry.qrString {
+            iconImageView.image = qrString.generateQRCodeFromString()
         } else if let url = entry.url {
             iconImageView.downloaded(from: url)
         }

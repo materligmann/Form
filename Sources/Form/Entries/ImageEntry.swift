@@ -9,18 +9,18 @@ import Foundation
 import UIKit
 
 public struct ImageEntry {
-    public let image: UIImage?
+    public let qrString: String?
     public let url: URL?
     public let height: Int
     public let placeholder: String?
     public let color: UIColor?
     
-    public init(image: UIImage?,
+    public init(qrString: String?,
                 url: URL?,
                 height: Int,
                 placeholder: String?,
                 color: UIColor?) {
-        self.image = image
+        self.qrString = qrString
         self.url = url
         self.height = height
         self.placeholder = placeholder

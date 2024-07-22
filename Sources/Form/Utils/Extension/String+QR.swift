@@ -9,7 +9,7 @@ import UIKit
 
 extension String {
     public func generateQRCodeFromString(lightBackground: Bool = true) -> UIImage? {
-        let data = self.data(using: String.Encoding.ascii)
+        let data = self.data(using: String.Encoding.utf8)
         guard let qrFilter = CIFilter(name: "CIQRCodeGenerator") else {
             return UIImage()
         }

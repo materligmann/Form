@@ -78,7 +78,7 @@ public class DateAndTimeCell: UITableViewCell {
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(descriptionLabel)
         descriptionLabel.leftAnchor.constraint(equalTo: iconView.rightAnchor, constant: 10).isActive = true
-        descriptionLabel.rightAnchor.constraint(equalTo: picker.leftAnchor, constant: -10).isActive = true
+        descriptionLabel.rightAnchor.constraint(equalTo: picker.leftAnchor, constant: 0).isActive = true
         descriptionLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
     }

@@ -37,6 +37,7 @@ public class SwitcherCell: UITableViewCell {
         switcherAction = entry.onSwitchAction
         switcher.onTintColor = entry.tintColor
         switcher.setOn(entry.isOn, animated: false)
+        switcher.isEnabled = entry.enable
         imageView?.tintColor = entry.imageColor
         textLabel?.text = entry.title
         textLabel?.font = entry.font

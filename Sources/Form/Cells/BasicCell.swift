@@ -9,7 +9,6 @@ import UIKit
 
 public class BasicCell: UITableViewCell {
     
-    private let placeholderLabel = UILabel()
     private let valueLabel = UILabel()
     private let imageIcon = UIImageView()
     
@@ -22,6 +21,7 @@ public class BasicCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureImageIcon()
+        configureValueLabel()
     }
     
     required init?(coder: NSCoder) {
@@ -35,11 +35,11 @@ public class BasicCell: UITableViewCell {
     }
     
     public func set(entry: BasicEntry) {
-        textLabel?.textColor = entry.textColor
-        textLabel?.font = entry.font
+        valueLabel.textColor = entry.textColor
+        valueLabel.font = entry.font
         backgroundColor = entry.color
         tintColor = entry.textColor
-        textLabel?.text = entry.title
+        valueLabel.text = entry.title
         
         accessoryType = entry.accesory
         
@@ -64,5 +64,14 @@ public class BasicCell: UITableViewCell {
         imageIcon.widthAnchor.constraint(equalToConstant: 30).isActive = true
         imageIcon.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
         imageIcon.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
+    }
+    
+    private func configureValueLabel() {
+        valueLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(valueLabel)
+        valueLabel.leftAnchor.constraint(equalTo: imageIcon.rightAnchor, constant: 10).isActive = true
+        valueLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
+        valueLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+        valueLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
     }
 }

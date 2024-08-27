@@ -11,6 +11,7 @@ public class BasicCell: UITableViewCell {
     
     private let placeholderLabel = UILabel()
     private let valueLabel = UILabel()
+    private let imageIcon = UIImageView()
     
     public class var cellIdentifier: String {
         return "BasicCell"
@@ -20,6 +21,7 @@ public class BasicCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        configureImageIcon()
     }
     
     required init?(coder: NSCoder) {
@@ -43,14 +45,24 @@ public class BasicCell: UITableViewCell {
         
         switch entry.imageName {
         case .image(let name):
-            imageView?.image = UIImage(named: name)
+            imageIcon.image = UIImage(named: name)
         case .system(let name):
-            imageView?.image = UIImage(systemName: name)
-            imageView?.tintColor = entry.imageColor
+            imageIcon.image = UIImage(systemName: name)
+            imageIcon.tintColor = entry.imageColor
         case .url:
             break
         case .none:
             break
         }
+    }
+    
+    private func configureImageIcon() {
+        imageIcon.contentMode = .scaleAspectFit
+        imageIcon.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(imageIcon)
+        imageIcon.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        imageIcon.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        imageIcon.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
+        imageIcon.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
     }
 }

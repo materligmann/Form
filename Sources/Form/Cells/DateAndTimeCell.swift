@@ -43,6 +43,7 @@ public class DateAndTimeCell: UITableViewCell {
         }
         picker.maximumDate = entry.maximumDate
         picker.minimumDate = entry.minimumDate
+        picker.isEnabled = entry.enable
         descriptionLabel.text = entry.description
         iconView.tintColor = entry.iconColor
         picker.tintColor = entry.iconColor

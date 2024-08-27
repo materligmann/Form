@@ -31,10 +31,10 @@ public class TextViewCell: UITableViewCell {
     
     // MARK: Set
     
-    public func set(entry: TextViewEntry, enable: Bool) {
+    public func set(entry: TextViewEntry) {
         self.entry = entry
         self.onTextFieldChange = entry.change
-        textView.isEditable = enable
+        textView.isEditable = entry.enable
         if let text = entry.text {
             textView.text = text
         } else {

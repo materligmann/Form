@@ -25,6 +25,23 @@ public class Persistance {
         }
     }
     
+    public static func saveDictionary<K: Codable, V: Codable>(dictionary: [K: V], key: String) {
+        let encoder = JSONEncoder()
+        if let encodedDict = try? encoder.encode(dictionary) {
+            let defaults = UserDefaults.standard
+            defaults.set(encodedDict, forKey: key)
+        }
+    }
+    
+    public static func getDictionary<K: Codable, V: Codable>(key: String) -> [K: V]? {
+        let decoder = JSONDecoder()
+        if let encodedDict = UserDefaults.standard.data(forKey: key),
+           let dictionary = try? decoder.decode([K: V].self, from: encodedDict) {
+            return dictionary
+        }
+        return nil
+    }
+    
     public static func getArray<T: Codable>(key: String) -> [T]?{
         let decoder = JSONDecoder()
         if let encoded = UserDefaults.standard.object(forKey: key) as? Data,

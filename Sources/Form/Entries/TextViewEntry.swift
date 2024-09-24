@@ -11,10 +11,10 @@ public struct TextViewEntry {
     let text: String?
     let placeholder: String?
     let change: ((String?) -> Void)?
-    let background: UIColor
+    let background: UIColor?
     let enable: Bool
     
-    public init(text: String?, placeholder: String?, change: ((String?) -> Void)?, background: UIColor, enable: Bool) {
+    public init(text: String?, placeholder: String?, change: ((String?) -> Void)?, background: UIColor?, enable: Bool) {
         self.text = text
         self.placeholder = placeholder
         self.change = change

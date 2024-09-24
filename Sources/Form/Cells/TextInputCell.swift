@@ -45,7 +45,6 @@ public class TextInputCell: UITableViewCell {
     private func configureTextField() {
         textField.keyboardType = .alphabet
         textField.autocorrectionType = .no
-        textField.textColor = .black
         textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         textField.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(textField)

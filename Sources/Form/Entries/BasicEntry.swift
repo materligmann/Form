@@ -12,9 +12,9 @@ public struct BasicEntry {
     let imageName: BasicImage
     public let action: (() -> Void)?
     let accesory: UITableViewCell.AccessoryType
-    let color: UIColor
-    let imageColor: UIColor
-    let textColor: UIColor
+    let color: UIColor?
+    let imageColor: UIColor?
+    let textColor: UIColor?
     var supressable: Bool = false
     let font: UIFont?
     
@@ -23,9 +23,9 @@ public struct BasicEntry {
                 imageName: BasicImage,
                 action: (() -> Void)?,
                 accesory: UITableViewCell.AccessoryType,
-                color: UIColor,
-                imageColor: UIColor,
-                textColor: UIColor,
+                color: UIColor?,
+                imageColor: UIColor?,
+                textColor: UIColor?,
                 supressable: Bool = false,
                 font: UIFont?) {
         self.title = title

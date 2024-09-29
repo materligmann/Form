@@ -49,8 +49,10 @@ public class BasicCell: UITableViewCell {
         case .system(let name):
             imageIcon.image = UIImage(systemName: name)
             imageIcon.tintColor = entry.imageColor
-        case .url:
-            break
+        case .url(let url):
+            if let url = URL(string: url) {
+                imageIcon.downloaded(from: url)
+            }
         case .none:
             break
         }

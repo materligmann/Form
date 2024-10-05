@@ -42,8 +42,19 @@ public class ImageCell: UITableViewCell {
         }
         if let qrString = entry.qrString {
             iconImageView.image = qrString.generateQRCodeFromString()
-        } else if let url = entry.url {
-            iconImageView.downloaded(from: url)
+        } else if let image = entry.image {
+            switch image {
+            case .image(let name):
+                iconImageView.image = UIImage(named: name)
+            case .system(let name):
+                iconImageView.image = UIImage(systemName: name)
+            case .url(let url):
+                if let url = URL(string: url) {
+                    iconImageView.downloaded(from: url)
+                }
+            case .none:
+                break
+            }
         }
         placeholder = entry.placeholder
         placeholderLabel.text = placeholder

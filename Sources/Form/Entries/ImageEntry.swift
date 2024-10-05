@@ -10,20 +10,20 @@ import UIKit
 
 public struct ImageEntry {
     public let qrString: String?
-    public let url: URL?
     public let height: Int
     public let placeholder: String?
     public let color: UIColor?
+    public let image: BasicImage?
     
     public init(qrString: String?,
-                url: URL?,
                 height: Int,
                 placeholder: String?,
-                color: UIColor?) {
+                color: UIColor?,
+                image: BasicImage?) {
         self.qrString = qrString
-        self.url = url
         self.height = height
         self.placeholder = placeholder
         self.color = color
+        self.image = image
     }
 }

@@ -14,16 +14,19 @@ public struct ImageEntry {
     public let placeholder: String?
     public let color: UIColor?
     public let image: BasicImage?
+    public let backgroundColor: UIColor?
     
     public init(qrString: String?,
                 height: Int,
                 placeholder: String?,
                 color: UIColor?,
-                image: BasicImage?) {
+                image: BasicImage?,
+                backgroundColor: UIColor?) {
         self.qrString = qrString
         self.height = height
         self.placeholder = placeholder
         self.color = color
         self.image = image
+        self.backgroundColor = backgroundColor
     }
 }

@@ -36,6 +36,7 @@ public class ImageCell: UITableViewCell {
     // MARK: Set
     
      public func set(entry: ImageEntry) {
+         backgroundColor = entry.backgroundColor
         if let color = entry.color {
             iconImageView.tintColor = color
         }

@@ -25,7 +25,6 @@ public class ImageCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configureBackground()
         configureIconImageView()
         configurePlaceholderLabel()
     }
@@ -61,10 +60,6 @@ public class ImageCell: UITableViewCell {
     }
     
     // MARK: Configure
-    
-    private func configureBackground() {
-        backgroundColor = .backColor
-    }
     
     private func configureIconImageView() {
         iconImageView.contentMode = .scaleAspectFit

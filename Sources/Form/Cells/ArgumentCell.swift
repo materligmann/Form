@@ -42,6 +42,8 @@ public class ArgumentCell: UITableViewCell {
             break
         case .system(let name):
             iconImageView.image = UIImage(systemName: name)
+        case .uiimage(let image):
+            iconImageView.image = image
         }
         argumentLabel.text = entry.argument
     }

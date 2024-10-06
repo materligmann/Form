@@ -74,6 +74,8 @@ public class ImageButtonCell: UITableViewCell {
             break
         case .none:
             break
+        case .uiimage(let image):
+            buttonImageView.image = image
         }
     }
     

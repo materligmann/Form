@@ -47,6 +47,8 @@ public class ResultCell: UITableViewCell {
             break
         case .none:
             break
+        case .uiimage(let image):
+            iconImageView.image = image
         }
     }
     

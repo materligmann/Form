@@ -51,6 +51,8 @@ public class SwitcherCell: UITableViewCell {
             break
         case .none:
             break
+        case .uiimage(let image):
+            imageView?.image = image
         }
     }
     

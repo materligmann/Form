@@ -55,6 +55,8 @@ public class BasicCell: UITableViewCell {
             }
         case .none:
             break
+        case .uiimage(let image):
+            imageIcon.image = image
         }
     }
     

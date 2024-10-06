@@ -54,6 +54,8 @@ public class ImageCell: UITableViewCell {
                 }
             case .none:
                 break
+            case .uiimage(let image):
+                iconImageView.image = image
             }
         }
         placeholder = entry.placeholder

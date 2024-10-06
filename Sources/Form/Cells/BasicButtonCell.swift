@@ -77,6 +77,8 @@ public class BasicButtonCell: UITableViewCell {
             break
         case .none:
             break
+        case .uiimage(let image):
+            button.setImage(image, for: .normal)
         }
     }
     

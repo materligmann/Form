@@ -58,6 +58,8 @@ public class AlertCell: UITableViewCell {
                 break
             case .none:
                 break
+            case .uiimage(let image):
+                imageView?.image = image
             }
         }
     }

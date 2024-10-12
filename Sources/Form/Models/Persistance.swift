@@ -51,7 +51,7 @@ public class Persistance {
         return nil
     }
     
-    public static func saveArray<T: Codable>(objects: [T], key: String) {
+    public static func saveArray<T: Codable>(objects: [T]?, key: String) {
         let encoder = JSONEncoder()
         if let savedEncoded = try? encoder.encode(objects) {
             let defaults = UserDefaults.standard

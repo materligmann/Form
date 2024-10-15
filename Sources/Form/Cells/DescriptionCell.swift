@@ -32,9 +32,9 @@ public class DescriptionCell: UITableViewCell {
         accessoryType = accessory
     }
     
-    public func set(description: String, color: UIColor) {
-        descriptionLabel.text = description
-        backgroundColor = color
+    public func set(entry: DescriptionEntry) {
+        descriptionLabel.text = entry.description
+        backgroundColor = entry.backgroundColor
     }
     
     private func configureTitleLabel() {

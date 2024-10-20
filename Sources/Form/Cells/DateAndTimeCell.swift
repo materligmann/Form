@@ -52,7 +52,7 @@ public class DateAndTimeCell: UITableViewCell {
     // MARK: Configure
     
     private func configureBackground() {
-        backgroundColor = .white
+        backgroundColor = .systemBackground
     }
     
     private func configureIcon() {

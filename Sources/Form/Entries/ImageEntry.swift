@@ -10,14 +10,14 @@ import UIKit
 
 public struct ImageEntry {
     public let qrString: String?
-    public let height: Int
+    public let height: CGFloat
     public let placeholder: String?
     public let color: UIColor?
     public let image: BasicImage?
     public let backgroundColor: UIColor?
     
     public init(qrString: String?,
-                height: Int,
+                height: CGFloat,
                 placeholder: String?,
                 color: UIColor?,
                 image: BasicImage?,

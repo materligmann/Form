@@ -34,6 +34,7 @@ public class TextInputCell: UITableViewCell {
         textField.keyboardType = entry.keyboardType ?? .alphabet
         backgroundColor = entry.backgroundColor
         textField.text = entry.defaultText
+        textField.textAlignment = entry.alignment
         textField.attributedPlaceholder = NSAttributedString(
             string: entry.placeholder,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]

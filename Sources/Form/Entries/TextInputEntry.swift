@@ -10,12 +10,12 @@ import UIKit
 // MARK: TextInput
 
 public struct TextInputEntry {
-    let defaultText: String?
-    let placeholder: String
-    let onChange: (String?) -> Void
-    let backgroundColor: UIColor?
-    var keyboardType: UIKeyboardType? = .alphabet
-    let alignment: NSTextAlignment
+    public let defaultText: String?
+    public let placeholder: String
+    public let onChange: (String?) -> Void
+    public let backgroundColor: UIColor?
+    public var keyboardType: UIKeyboardType? = .alphabet
+    public let alignment: NSTextAlignment
     
     
     public init(defaultText: String?,

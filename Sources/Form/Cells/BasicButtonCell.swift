@@ -115,7 +115,7 @@ public class BasicButtonCell: UITableViewCell {
         }
     }
     
-    func isLoading(loading: Bool) {
+    public func isLoading(loading: Bool) {
         if loading {
             button.isEnabled = false
             button.setTitle("", for: .normal)

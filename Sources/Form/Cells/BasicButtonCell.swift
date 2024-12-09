@@ -45,6 +45,7 @@ public class BasicButtonCell: UITableViewCell {
         self.myTintColor = entry.selectedTintColor
         self.disabledTintColor = entry.disabledTintColor
         self.title = entry.title
+        activityIndicator.color = .black
         if entry.enabled {
             button.isEnabled = true
             button.backgroundColor = color

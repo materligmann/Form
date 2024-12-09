@@ -23,6 +23,7 @@ public class BasicButtonCell: UITableViewCell {
     private var disabledTintColor: UIColor?
     
     private var buttonAction: (() -> Void)?
+    private var title: String?
     
     // MARK: Lifecycle
     
@@ -43,6 +44,7 @@ public class BasicButtonCell: UITableViewCell {
         self.disabledColor = entry.disabledColor
         self.myTintColor = entry.selectedTintColor
         self.disabledTintColor = entry.disabledTintColor
+        self.title = entry.title
         if entry.enabled {
             button.isEnabled = true
             button.backgroundColor = color
@@ -110,6 +112,18 @@ public class BasicButtonCell: UITableViewCell {
             button.isEnabled = false
             button.backgroundColor = disabledColor
             button.setTitleColor(disabledTintColor, for: .normal)
+        }
+    }
+    
+    func isLoading(loading: Bool) {
+        if loading {
+            button.isEnabled = false
+            button.setTitle("", for: .normal)
+            activityIndicator.startAnimating()
+        } else {
+            button.isEnabled = true
+            button.setTitle(title, for: .normal)
+            activityIndicator.stopAnimating()
         }
     }
     

@@ -13,7 +13,7 @@ public class DetailCell: UITableViewCell {
     private let detailLabel = UILabel()
     private let iconImageView = UIImageView()
     
-    class var cellIdentifier: String {
+    public class var cellIdentifier: String {
         return "DetailCell"
     }
     

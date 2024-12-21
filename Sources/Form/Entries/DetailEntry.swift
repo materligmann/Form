@@ -8,11 +8,11 @@
 import UIKit
 
 public struct DetailEntry {
-    let title: String
-    let text: String?
-    let image: BasicImage
-    let onAction: (() -> Void)?
-    let tintColor: UIColor
+    public let title: String
+    public let text: String?
+    public let image: BasicImage
+    public let onAction: (() -> Void)?
+    public let tintColor: UIColor
     
     public init(title: String, text: String?, image: BasicImage, onAction: (() -> Void)?, tintColor: UIColor) {
         self.title = title

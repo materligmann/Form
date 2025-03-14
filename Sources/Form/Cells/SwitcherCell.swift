@@ -41,7 +41,7 @@ public class SwitcherCell: UITableViewCell {
         imageView?.tintColor = entry.imageColor
         textLabel?.text = entry.title
         textLabel?.font = entry.font
-        textLabel?.textColor = .mainColor
+        textLabel?.textColor = entry.textColor
         switch entry.imageName {
         case .image(let name):
             imageView?.image = UIImage(named: name)?.resize(targetSize: CGSize(width: 30, height: 30))

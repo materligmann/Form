@@ -17,8 +17,9 @@ public struct SwitcherEntry {
     public let onSwitchAction: ((Bool) -> Void)?
     public let font: UIFont
     public let enable: Bool
+    public let textColor: UIColor
     
-    public init(title: String, backgroundColor: UIColor, imageColor: UIColor, tintColor: UIColor, imageName: BasicImage, isOn: Bool, onSwitchAction: ((Bool) -> Void)?, font: UIFont, enable: Bool) {
+    public init(title: String, backgroundColor: UIColor, imageColor: UIColor, tintColor: UIColor, imageName: BasicImage, isOn: Bool, onSwitchAction: ((Bool) -> Void)?, font: UIFont, enable: Bool, textColor: UIColor) {
         self.title = title
         self.backgroundColor = backgroundColor
         self.imageColor = imageColor
@@ -28,5 +29,6 @@ public struct SwitcherEntry {
         self.onSwitchAction = onSwitchAction
         self.font = font
         self.enable = enable
+        self.textColor = textColor
     }
 }

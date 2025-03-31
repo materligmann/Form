@@ -58,6 +58,11 @@ public class BasicCell: UITableViewCell {
         case .uiimage(let image):
             imageIcon.image = image
         }
+        
+        if entry.round {
+            imageIcon.layer.cornerRadius = 15
+            imageIcon.clipsToBounds = true
+        }
     }
     
     private func configureImageIcon() {

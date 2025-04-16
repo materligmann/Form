@@ -23,7 +23,6 @@ public class DateAndTimeCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configureBackground()
         configureIcon()
         configureDatePicker()
         configureDescriptionLabel()
@@ -50,10 +49,6 @@ public class DateAndTimeCell: UITableViewCell {
     }
     
     // MARK: Configure
-    
-    private func configureBackground() {
-        backgroundColor = .systemBackground
-    }
     
     private func configureIcon() {
         iconView.image = UIImage(systemName: "calendar.circle.fill")

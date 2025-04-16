@@ -51,7 +51,7 @@ public class DateAndTimeCell: UITableViewCell {
     // MARK: Configure
     
     private func configureIcon() {
-        iconView.image = UIImage(systemName: "calendar.circle.fill")
+        iconView.image = UIImage(systemName: "calendar")
         iconView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(iconView)
         iconView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true

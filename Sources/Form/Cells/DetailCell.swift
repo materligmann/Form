@@ -36,6 +36,7 @@ public class DetailCell: UITableViewCell {
         detailLabel.text = entry.text
         iconImageView.tintColor = entry.tintColor
         titleLabel.textColor = entry.tintColor
+        titleLabel.font = entry.font
         
         switch entry.image {
         case .image(let name):

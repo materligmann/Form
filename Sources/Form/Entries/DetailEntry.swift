@@ -13,12 +13,14 @@ public struct DetailEntry {
     public let image: BasicImage
     public let onAction: (() -> Void)?
     public let tintColor: UIColor
+    public let font: UIFont
     
-    public init(title: String, text: String?, image: BasicImage, onAction: (() -> Void)?, tintColor: UIColor) {
+    public init(title: String, text: String?, image: BasicImage, onAction: (() -> Void)?, tintColor: UIColor, font: UIFont = UIFont.systemFont(ofSize: 17, weight: .bold)) {
         self.title = title
         self.text = text
         self.image = image
         self.onAction = onAction
         self.tintColor = tintColor
+        self.font = font
     }
 }

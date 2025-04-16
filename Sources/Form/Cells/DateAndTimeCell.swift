@@ -70,7 +70,7 @@ public class DateAndTimeCell: UITableViewCell {
     }
     
     private func configureDescriptionLabel() {
-        descriptionLabel.font = UIFont.systemFont(ofSize: 11, weight: .bold)
+        descriptionLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(descriptionLabel)
         descriptionLabel.leftAnchor.constraint(equalTo: iconView.rightAnchor, constant: 10).isActive = true

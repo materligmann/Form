@@ -73,7 +73,6 @@ public class DetailCell: UITableViewCell {
         titleLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: 10).isActive = true
         titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
-        titleLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     private func configureDetailLabel() {

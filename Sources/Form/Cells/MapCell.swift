@@ -106,7 +106,12 @@ public class MapCell: UITableViewCell {
                 }
             }
         case .show:
-            self.originRegion = entry.region
+            if let region = entry.region {
+                self.originRegion = region
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = region.center
+                map.addAnnotation(annotation)
+            }
         }
         if let originRegion = originRegion {
             map.setRegion(originRegion, animated: false)

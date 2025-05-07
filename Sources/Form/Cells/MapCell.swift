@@ -106,7 +106,7 @@ public class MapCell: UITableViewCell {
                 }
             }
         case .show:
-            break
+            self.originRegion = entry.region
         }
         if let originRegion = originRegion {
             map.setRegion(originRegion, animated: false)
@@ -139,6 +139,7 @@ public class MapCell: UITableViewCell {
     }
     
     private func configureMap() {
+        map.overrideUserInterfaceStyle = .light
         map.delegate = self
         map.isRotateEnabled = false
         map.showsUserLocation = true

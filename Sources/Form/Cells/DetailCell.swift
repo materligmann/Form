@@ -73,6 +73,8 @@ public class DetailCell: UITableViewCell {
         titleLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: 10).isActive = true
         titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
+        titleLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        titleLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
     }
     
     private func configureDetailLabel() {
@@ -85,5 +87,7 @@ public class DetailCell: UITableViewCell {
         detailLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         detailLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
         detailLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
+        detailLabel.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        detailLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
 }

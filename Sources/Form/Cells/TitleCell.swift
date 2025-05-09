@@ -34,6 +34,7 @@ public class TitleCell: UITableViewCell {
     
     public func set(entry: TitleEntry) {
         titleLabel.text = entry.title
+        titleLabel.textAlignment = entry.textAlignment
         backgroundColor = entry.backgroundColor
     }
     
@@ -41,7 +42,6 @@ public class TitleCell: UITableViewCell {
         titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         titleLabel.numberOfLines = 0
         titleLabel.adjustsFontSizeToFitWidth = true
-        titleLabel.textAlignment = .center
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
         titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true

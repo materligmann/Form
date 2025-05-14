@@ -1,3 +1,4 @@
+
 import UIKit
 
 extension String {
@@ -6,26 +7,33 @@ extension String {
               let qrFilter = CIFilter(name: "CIQRCodeGenerator") else {
             return nil
         }
-        
+
         qrFilter.setValue(data, forKey: "inputMessage")
         qrFilter.setValue("M", forKey: "inputCorrectionLevel")
         guard let outputImage = qrFilter.outputImage else { return nil }
-        
-        let scaledQR = outputImage.transformed(by: CGAffineTransform(scaleX: 10, y: 10))
-        let context = CIContext()
 
+        // Scale it
+        let scaledQR = outputImage.transformed(by: CGAffineTransform(scaleX: 10, y: 10))
+
+        // Apply color filter
+        guard let colorFilter = CIFilter(name: "CIFalseColor") else { return nil }
+
+        colorFilter.setValue(scaledQR, forKey: kCIInputImageKey)
         if lightBackground {
-            guard let cgImage = context.createCGImage(scaledQR, from: scaledQR.extent) else { return nil }
-            return UIImage(cgImage: cgImage)
+            colorFilter.setValue(CIColor(color: .black), forKey: "inputColor0") // QR code dots
+            colorFilter.setValue(CIColor(color: .white), forKey: "inputColor1") // Background
         } else {
-            guard let colorInvert = CIFilter(name: "CIColorInvert"),
-                  let maskToAlpha = CIFilter(name: "CIMaskToAlpha") else { return nil }
-            colorInvert.setValue(scaledQR, forKey: kCIInputImageKey)
-            guard let inverted = colorInvert.outputImage else { return nil }
-            maskToAlpha.setValue(inverted, forKey: kCIInputImageKey)
-            guard let finalCI = maskToAlpha.outputImage,
-                  let cgImage = context.createCGImage(finalCI, from: finalCI.extent) else { return nil }
-            return UIImage(cgImage: cgImage)
+            colorFilter.setValue(CIColor(color: .white), forKey: "inputColor0") // QR code dots
+            colorFilter.setValue(CIColor(color: .black), forKey: "inputColor1") // Background
         }
+
+        guard let coloredQR = colorFilter.outputImage else { return nil }
+
+        let context = CIContext()
+        guard let cgImage = context.createCGImage(coloredQR, from: coloredQR.extent) else {
+            return nil
+        }
+
+        return UIImage(cgImage: cgImage)
     }
 }

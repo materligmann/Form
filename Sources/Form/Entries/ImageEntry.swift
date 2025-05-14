@@ -23,7 +23,7 @@ public struct ImageEntry {
                 color: UIColor?,
                 image: BasicImage?,
                 backgroundColor: UIColor?,
-                lightBackgroundQr: Bool) {
+                lightBackgroundQr: Bool?) {
         self.qrString = qrString
         self.height = height
         self.placeholder = placeholder

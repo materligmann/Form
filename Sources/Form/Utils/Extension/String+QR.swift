@@ -1,41 +1,31 @@
-//
-//  UIImage+QR.swift
-//  GoGo
-//
-//  Created by Mathias Erligmann on 23/11/2020.
-//
-
 import UIKit
 
 extension String {
     public func generateQRCodeFromString(lightBackground: Bool = true) -> UIImage? {
-        let data = self.data(using: String.Encoding.utf8)
-        guard let qrFilter = CIFilter(name: "CIQRCodeGenerator") else {
-            return UIImage()
+        guard let data = self.data(using: .utf8),
+              let qrFilter = CIFilter(name: "CIQRCodeGenerator") else {
+            return nil
         }
-        qrFilter.setValue(data, forKey: "inputMessage")
-        guard let output = qrFilter.outputImage else { return nil }
         
-        let transform = CGAffineTransform(scaleX: 10, y: 10)
-        let scaledQR = output.transformed(by: transform)
-        guard let colorInvertFilter = CIFilter(name: "CIColorInvert") else { return nil }
-        colorInvertFilter.setValue(scaledQR, forKey: "inputImage")
-        guard let outputInvertedImage = colorInvertFilter.outputImage else { return nil}
-        guard let maskToAlphaFilter = CIFilter(name: "CIMaskToAlpha") else { return nil }
-        maskToAlphaFilter.setValue(outputInvertedImage, forKey: "inputImage")
-        guard let outputCIImage = maskToAlphaFilter.outputImage else { return nil }
+        qrFilter.setValue(data, forKey: "inputMessage")
+        qrFilter.setValue("M", forKey: "inputCorrectionLevel")
+        guard let outputImage = qrFilter.outputImage else { return nil }
+        
+        let scaledQR = outputImage.transformed(by: CGAffineTransform(scaleX: 10, y: 10))
+        let context = CIContext()
+
         if lightBackground {
-            colorInvertFilter.setValue(outputCIImage, forKey: "inputImage")
-            guard let outputImageFinal = colorInvertFilter.outputImage else { return nil }
-            let context = CIContext()
-            guard let cgImage = context.createCGImage(outputImageFinal, from: outputImageFinal.extent) else { return nil }
-            let processedImage = UIImage(cgImage: cgImage)
-            return processedImage
+            guard let cgImage = context.createCGImage(scaledQR, from: scaledQR.extent) else { return nil }
+            return UIImage(cgImage: cgImage)
         } else {
-            let context = CIContext()
-            guard let cgImage = context.createCGImage(outputCIImage, from: outputCIImage.extent) else { return nil }
-            let processedImage = UIImage(cgImage: cgImage)
-            return processedImage
+            guard let colorInvert = CIFilter(name: "CIColorInvert"),
+                  let maskToAlpha = CIFilter(name: "CIMaskToAlpha") else { return nil }
+            colorInvert.setValue(scaledQR, forKey: kCIInputImageKey)
+            guard let inverted = colorInvert.outputImage else { return nil }
+            maskToAlpha.setValue(inverted, forKey: kCIInputImageKey)
+            guard let finalCI = maskToAlpha.outputImage,
+                  let cgImage = context.createCGImage(finalCI, from: finalCI.extent) else { return nil }
+            return UIImage(cgImage: cgImage)
         }
     }
 }

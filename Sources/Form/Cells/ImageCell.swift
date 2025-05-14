@@ -41,7 +41,7 @@ public class ImageCell: UITableViewCell {
             iconImageView.tintColor = color
         }
         if let qrString = entry.qrString {
-            iconImageView.image = qrString.generateQRCodeFromString(lightBackground: entry.backgroundColor == .black ? false : true)
+            iconImageView.image = qrString.generateQRCodeFromString(lightBackground: entry.lightBackgroundQr ?? true)
         } else if let image = entry.image {
             switch image {
             case .image(let name):

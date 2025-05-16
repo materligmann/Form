@@ -8,12 +8,12 @@
 import UIKit
 
 extension UIViewController {
-    public func configureKeyboardNotification(bottom: NSLayoutConstraint) {
+    open func configureKeyboardNotification(bottom: NSLayoutConstraint) {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name:UIResponder.keyboardWillShowNotification, object: bottom);
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name:UIResponder.keyboardWillHideNotification, object: bottom);
     }
     
-    @objc public func keyboardWillShow(sender: NSNotification) {
+    @objc open func keyboardWillShow(sender: NSNotification) {
         if let bottom = sender.object as? NSLayoutConstraint,
            let keyboardFrame: NSValue = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
@@ -25,7 +25,7 @@ extension UIViewController {
         }
     }
     
-    @objc public func keyboardWillHide(sender: NSNotification) {
+    @objc open func keyboardWillHide(sender: NSNotification) {
         if let bottom = sender.object as? NSLayoutConstraint {
             bottom.constant = 0
             UIView.animate(withDuration: 0.25) {

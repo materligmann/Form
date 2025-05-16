@@ -7,32 +7,41 @@
 
 import UIKit
 
+
+private var keyboardConstraintKey: UInt8 = 0
+
 extension UIViewController {
-    open func configureKeyboardNotification(bottom: NSLayoutConstraint) {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name:UIResponder.keyboardWillShowNotification, object: bottom);
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name:UIResponder.keyboardWillHideNotification, object: bottom);
+    
+    var keyboardAwareConstraint: NSLayoutConstraint? {
+            get {
+                return objc_getAssociatedObject(self, &keyboardConstraintKey) as? NSLayoutConstraint
+            }
+            set {
+                objc_setAssociatedObject(self, &keyboardConstraintKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            }
+        }
+    
+    public func observeKeyboard(with constraint: NSLayoutConstraint) {
+        self.keyboardAwareConstraint = constraint
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc open func keyboardWillShow(sender: NSNotification) {
-        if let bottom = sender.object as? NSLayoutConstraint,
-           let keyboardFrame: NSValue = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            bottom.constant = -keyboardHeight
-            UIView.animate(withDuration: 0.25) {
-                self.view.layoutSubviews()
-            }
-        }
-    }
-    
-    @objc open func keyboardWillHide(sender: NSNotification) {
-        if let bottom = sender.object as? NSLayoutConstraint {
-            bottom.constant = 0
-            UIView.animate(withDuration: 0.25) {
-                self.view.layoutSubviews()
-            }
-        }
-    }
+           guard let keyboardFrame = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+           let keyboardHeight = keyboardFrame.cgRectValue.height
+           keyboardAwareConstraint?.constant = -keyboardHeight
+           UIView.animate(withDuration: 0.25) {
+               self.view.layoutIfNeeded()
+           }
+       }
+       
+       @objc open func keyboardWillHide(sender: NSNotification) {
+           keyboardAwareConstraint?.constant = -50
+           UIView.animate(withDuration: 0.25) {
+               self.view.layoutIfNeeded()
+           }
+       }
     
     
     public func configureKeyboard() {

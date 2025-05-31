@@ -76,7 +76,7 @@ public class ScanViewController: UIViewController {
     }
     
     private func configureBackground() {
-        view.backgroundColor = .white
+        view.backgroundColor = .black
     }
     
     private func configureNavigation() {

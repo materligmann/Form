@@ -95,7 +95,8 @@ public class ScanViewController: UIViewController {
     }
     
     private func configureFrameOverlay() {
-        frameOverlay.image = UIImage(named: "frame")?.withTintColor(.white).withRenderingMode(.alwaysTemplate)
+        frameOverlay.image = UIImage(named: "frame")?.withRenderingMode(.alwaysTemplate)
+        frameOverlay.tintColor = .white
         frameOverlay.contentMode = .scaleAspectFit
         frameOverlay.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(frameOverlay)

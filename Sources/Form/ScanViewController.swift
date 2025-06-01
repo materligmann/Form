@@ -36,6 +36,7 @@ public class ScanViewController: UIViewController {
         configureNavigation()
         configureBackground()
         configureCaptureView()
+        configureFrameOverlay()
         configureScan()
     }
     

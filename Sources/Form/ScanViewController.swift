@@ -14,6 +14,7 @@ public class ScanViewController: UIViewController {
     private let dismissButton = UIBarButtonItem()
     private var captureSession: AVCaptureSession!
     private var previewLayer = AVCaptureVideoPreviewLayer()
+    private let frameOverlay = UIImageView()
     
     private let request: ScanModels.Request
     
@@ -90,6 +91,20 @@ public class ScanViewController: UIViewController {
         captureView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         captureView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 0).isActive = true
         captureView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+    }
+    
+    private func configureFrameOverlay() {
+        frameOverlay.image = UIImage(named: "frame")?.withRenderingMode(.alwaysTemplate).withTintColor(.white)
+        frameOverlay.contentMode = .scaleAspectFit
+        frameOverlay.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(frameOverlay)
+
+        NSLayoutConstraint.activate([
+            frameOverlay.centerXAnchor.constraint(equalTo: captureView.centerXAnchor),
+            frameOverlay.centerYAnchor.constraint(equalTo: captureView.centerYAnchor),
+            frameOverlay.widthAnchor.constraint(equalToConstant: 250),
+            frameOverlay.heightAnchor.constraint(equalToConstant: 250)
+        ])
     }
     
     

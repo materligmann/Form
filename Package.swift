@@ -25,7 +25,10 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "Form",
-            dependencies: []),
+            dependencies: [],
+            resources: [
+                .process("Resources") // this is relative to Sources/MyPackage
+            ]),
         .testTarget(
             name: "FormTests",
             dependencies: ["Form"]),

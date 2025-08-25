@@ -13,6 +13,8 @@ public class SliderCell: UITableViewCell {
     private let amountLabel = UILabel()
     private let descriptionLabel = UILabel()
     
+    private var int: Bool = false
+    
     public class var cellIdentifier: String {
         return "SliderCell"
     }
@@ -37,6 +39,7 @@ public class SliderCell: UITableViewCell {
     
     public func set(entry: SliderEntry) {
         action = entry.onSliderChange
+        self.int = entry.int
         slider.isContinuous = entry.isContinuous
         slider.minimumValue = Float(entry.minimum)
         slider.maximumValue = Float(entry.maximum)
@@ -82,16 +85,27 @@ public class SliderCell: UITableViewCell {
     // MARK: User Action
     
     @objc private func onSliderChange() {
-        var max = false
-        var min = false
-        if slider.maximumValue == slider.value {
-            max = true
+        if int {
+            let intValue = round(slider.value) // <-- Round to nearest integer
+            slider.setValue(intValue, animated: false) // <-- Force slider thumb to snap
+            amountLabel.text = String(Int(intValue))
+            
+            let max = intValue == slider.maximumValue
+            let min = intValue == slider.minimumValue
+            
+            action?(intValue, max, min)
+        } else {
+            var max = false
+            var min = false
+            if slider.maximumValue == slider.value {
+                max = true
+            }
+            if slider.minimumValue == slider.value {
+                min = true
+            }
+            amountLabel.text = String(slider.value)
+            action?(slider.value, max, min)
         }
-        if slider.minimumValue == slider.value {
-            min = true
-        }
-        amountLabel.text = String(slider.value)
-        action?(slider.value, max, min)
     }
     
     

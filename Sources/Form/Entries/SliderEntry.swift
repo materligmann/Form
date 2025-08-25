@@ -15,11 +15,12 @@ public struct SliderEntry {
     let tintColor: UIColor
     let isContinuous: Bool
     let description: String
+    let int: Bool
     
     public init(onSliderChange: @escaping (Float, Bool, Bool) -> Void,
                 initialValue: Float,
                 minimum: Float,
-                maximum: Float, tintColor: UIColor, isContinuous: Bool, description: String) {
+                maximum: Float, tintColor: UIColor, isContinuous: Bool, description: String, int: Bool) {
         self.onSliderChange = onSliderChange
         self.initialValue = initialValue
         self.minimum = minimum
@@ -27,5 +28,6 @@ public struct SliderEntry {
         self.tintColor = tintColor
         self.isContinuous = isContinuous
         self.description = description
+        self.int = int
     }
 }

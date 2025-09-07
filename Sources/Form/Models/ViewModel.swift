@@ -104,10 +104,6 @@ public class ViewModel {
             return getCameraCell(indexPath: indexPath,
                                  tableView: tableView,
                                  entry: cameraEntry)
-        case .ranking(let rankingEntry):
-            return getRankingCell(indexPath: indexPath,
-                                  tableView: tableView,
-                                  entry: rankingEntry)
         case .basicMap(let basicMapEntry):
             return getBasicMapCell(indexPath: indexPath,
                                    tableView: tableView,
@@ -440,17 +436,6 @@ public class ViewModel {
                                entry: CameraEntry) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(
             withIdentifier: CameraCell.cellIdentifier, for: indexPath) as? CameraCell {
-            cell.set(entry: entry)
-            return cell
-        }
-        return UITableViewCell()
-    }
-    
-    private func getRankingCell(indexPath: IndexPath,
-                               tableView: UITableView,
-                               entry: RankingEntry) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(
-            withIdentifier: RankingCell.cellIdentifier, for: indexPath) as? RankingCell {
             cell.set(entry: entry)
             return cell
         }

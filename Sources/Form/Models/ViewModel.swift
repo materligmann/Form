@@ -119,11 +119,6 @@ public class ViewModel {
         }
     }
     
-    public func swap(sourceIndexPath: IndexPath, destinationIndexPath: IndexPath) {
-        let mover = sections[sourceIndexPath.section].entries.remove(at: sourceIndexPath.row)
-        sections[destinationIndexPath.section].entries.insert(mover, at: destinationIndexPath.row)
-    }
-    
     public func getSectionTitle(for section: Int) -> String? {
         return sections[section].title
     }

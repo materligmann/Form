@@ -25,7 +25,10 @@ public class SliderCell: UITableViewCell {
     
     public override func prepareForReuse() {
         super.prepareForReuse()
-        action = nil
+        action = nil        // clear old callback
+        slider.value = 0    // reset
+        amountLabel.text = nil
+        descriptionLabel.text = nil
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

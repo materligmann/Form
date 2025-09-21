@@ -23,6 +23,11 @@ public class SliderCell: UITableViewCell {
     
     // MARK: Lifecycle
     
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+        action = nil
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none

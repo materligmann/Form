@@ -10,7 +10,7 @@ import UIKit
 
 public class WriteTextViewController: UIViewController,  UITextViewDelegate {
     
-    var request: WriteTextModels.Request?
+    public var request: WriteTextModels.Request?
     
     private let placeholderLabel = UILabel()
     private let doneButton = UIBarButtonItem()

@@ -81,7 +81,7 @@ public class WriteTextViewController: UIViewController,  UITextViewDelegate {
     }
     
     private func configureNavBar() {
-        navigationController?.navigationBar.backgroundColor = .black
+        navigationController?.navigationBar.backgroundColor = .systemBackground
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.isOpaque = true
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WriteTextViewController:UIViewController,  UITextViewDelegate {
+public class WriteTextViewController: UIViewController,  UITextViewDelegate {
     
     var request: WriteTextModels.Request?
     
@@ -40,7 +40,7 @@ class WriteTextViewController:UIViewController,  UITextViewDelegate {
         return label
     }()
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         configureBackground()
@@ -55,7 +55,7 @@ class WriteTextViewController:UIViewController,  UITextViewDelegate {
     
     private var didAutoFocus = false
 
-    override func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         guard !didAutoFocus else { return }
         didAutoFocus = true
@@ -166,7 +166,7 @@ class WriteTextViewController:UIViewController,  UITextViewDelegate {
     }
     
     
-    func textViewDidChange(_ textView: UITextView) {
+    public func textViewDidChange(_ textView: UITextView) {
         interactor.onText(text: textView.text)
         let characterCount = textView.text.count
         if let request {
@@ -174,7 +174,7 @@ class WriteTextViewController:UIViewController,  UITextViewDelegate {
         }
     }
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if let request {
             let currentText = textView.text ?? ""
             let size = CGSize(width: textTextView.frame.width, height: .infinity)

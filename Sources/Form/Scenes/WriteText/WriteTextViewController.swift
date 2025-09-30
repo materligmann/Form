@@ -77,11 +77,11 @@ public class WriteTextViewController: UIViewController,  UITextViewDelegate {
     //MARK: Configure
     
     private func configureBackground() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .white
     }
     
     private func configureNavBar() {
-        navigationController?.navigationBar.backgroundColor = .systemBackground
+        navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.isOpaque = true
     }

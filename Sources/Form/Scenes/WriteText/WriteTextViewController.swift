@@ -44,7 +44,6 @@ public class WriteTextViewController: UIViewController,  UITextViewDelegate {
         super.viewDidLoad()
         setup()
         configureBackground()
-        configureNavBar()
         configureDoneButton()
         configureBackItem()
         configureBioLabel()

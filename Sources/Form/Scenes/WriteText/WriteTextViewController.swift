@@ -80,12 +80,6 @@ public class WriteTextViewController: UIViewController,  UITextViewDelegate {
         view.backgroundColor = .white
     }
     
-    private func configureNavBar() {
-        navigationController?.navigationBar.backgroundColor = .white
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.isOpaque = true
-    }
-    
     private func configureBackItem() {
         let back = UIBarButtonItem(
             image: UIImage(systemName: "chevron.left"),

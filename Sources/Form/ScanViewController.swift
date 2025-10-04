@@ -176,9 +176,11 @@ public class ScanViewController: UIViewController {
     private func onCodeFound(code: String) {
         switch request.mode {
         case .present:
-            navigationController?.dismiss(animated: true, completion: { self.request.onCodeFound?(code) })
+            self.request.onCodeFound?(code)
+            navigationController?.dismiss(animated: true, completion: nil)
         case .navigation:
-            navigationController?.popViewController(animated: true, completion: {self.request.onCodeFound?(code)})
+            self.request.onCodeFound?(code)
+            navigationController?.popViewController(animated: true, completion: nil)
         }
     }
     

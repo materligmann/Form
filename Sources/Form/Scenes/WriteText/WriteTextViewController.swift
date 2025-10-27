@@ -22,7 +22,7 @@ public class WriteTextViewController: UIViewController,  UITextViewDelegate {
         textView.font = UIFont.systemFont(ofSize: 16)
         textView.isScrollEnabled = true
         textView.textContainerInset = UIEdgeInsets(top: 15, left: 8, bottom: 15, right: 8)
-        textView.layer.borderColor = UIColor.label.cgColor
+        textView.layer.borderColor = UIColor.white.cgColor
         textView.layer.borderWidth = 1.0
         textView.textContainer.lineBreakMode = .byWordWrapping
         textView.clipsToBounds = true

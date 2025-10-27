@@ -76,7 +76,7 @@ public class WriteTextViewController: UIViewController,  UITextViewDelegate {
     //MARK: Configure
     
     private func configureBackground() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
     }
     
     private func configureBackItem() {

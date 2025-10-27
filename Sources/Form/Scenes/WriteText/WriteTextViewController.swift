@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+@MainActor
 public class WriteTextViewController: UIViewController,  UITextViewDelegate {
     
     public var request: WriteTextModels.Request?

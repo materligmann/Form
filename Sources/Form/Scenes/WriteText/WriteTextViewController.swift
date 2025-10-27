@@ -22,7 +22,7 @@ public class WriteTextViewController: UIViewController,  UITextViewDelegate {
         textView.font = UIFont.systemFont(ofSize: 16)
         textView.isScrollEnabled = true
         textView.textContainerInset = UIEdgeInsets(top: 15, left: 8, bottom: 15, right: 8)
-        textView.layer.borderColor = UIColor.black.cgColor
+        textView.layer.borderColor = UIColor.label.cgColor
         textView.layer.borderWidth = 1.0
         textView.textContainer.lineBreakMode = .byWordWrapping
         textView.clipsToBounds = true
@@ -86,7 +86,7 @@ public class WriteTextViewController: UIViewController,  UITextViewDelegate {
             target: self,
             action: #selector(onBack)
         )
-        back.tintColor = .black
+        back.tintColor = .label
         navigationItem.leftBarButtonItem = back
     }
     
@@ -94,7 +94,7 @@ public class WriteTextViewController: UIViewController,  UITextViewDelegate {
         doneButton.title = "Done"
         doneButton.target = self
         doneButton.action = #selector(onDone)
-        doneButton.tintColor = .black
+        doneButton.tintColor = .label
         navigationItem.rightBarButtonItem = doneButton
     }
     
@@ -102,7 +102,7 @@ public class WriteTextViewController: UIViewController,  UITextViewDelegate {
         if let request {
             placeholderLabel.text = request.placeholder
         }
-        placeholderLabel.textColor = .black
+        placeholderLabel.textColor = .label
         placeholderLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(placeholderLabel)

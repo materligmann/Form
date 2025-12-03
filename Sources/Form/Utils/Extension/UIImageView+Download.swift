@@ -11,7 +11,7 @@ import ObjectiveC
 private var AssociatedURLHandle: UInt8 = 0
 
 extension UIImageView {
-    var currentURL: URL? {
+    public var currentURL: URL? {
         get { return objc_getAssociatedObject(self, &AssociatedURLHandle) as? URL }
         set { objc_setAssociatedObject(self, &AssociatedURLHandle, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }

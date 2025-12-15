@@ -61,8 +61,8 @@ public class BasicButtonCell: UITableViewCell {
         button.titleLabel?.font = entry.font
         button.setTitle(entry.title, for: .normal)
         if (entry.border) {
-            contentView.layer.borderWidth = 1
-            contentView.layer.cornerRadius = 12
+            //contentView.layer.borderWidth = 1
+            self.layer.borderWidth = 1
         }
         buttonAction = entry.onPress
         button.tintColor = .mainColor

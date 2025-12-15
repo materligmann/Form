@@ -30,6 +30,10 @@ public class BasicCell: UITableViewCell {
     
     // MARK: Set
     
+    public override func prepareForReuse() {
+        imageIcon.image = nil
+    }
+    
     func setAccessory(accessory: UITableViewCell.AccessoryType) {
         accessoryType = accessory
     }

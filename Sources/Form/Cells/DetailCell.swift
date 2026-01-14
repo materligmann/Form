@@ -35,6 +35,7 @@ public class DetailCell: UITableViewCell {
         accessoryType = entry.accesoryType ?? .none
         titleLabel.text = entry.title
         detailLabel.text = entry.text
+        detailLabel.textColor = entry.detailColor ?? .lightGray
         iconImageView.tintColor = entry.tintColor
         titleLabel.textColor = entry.tintColor
         titleLabel.font = entry.font

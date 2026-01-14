@@ -32,6 +32,7 @@ public class DetailCell: UITableViewCell {
     // MARK: Set
     
     public func set(entry: DetailEntry) {
+        accessoryType = entry.accesoryType ?? .none
         titleLabel.text = entry.title
         detailLabel.text = entry.text
         iconImageView.tintColor = entry.tintColor
